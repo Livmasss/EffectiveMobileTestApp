@@ -3,4 +3,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="login">Войти</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_lastname">Lastname</string>
+    <string name="hint_phone_number">Phone number</string>
+    <string name="loyalty_pr_text_0">Нажимая кнопку “Войти”, Вы принимаете</string>
+    <string name="loyalty_pr_text_1"><u>условия программы лояльности</u></string>
+
+    <string name="rus_phone_code">+7</string>
 </resources>
