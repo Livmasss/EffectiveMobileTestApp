@@ -1,4 +1,4 @@
-package com.livmas.effective_mobile_test_app.ui.home
+package com.livmas.effective_mobile_test_app.presenter.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -11,4 +11,5 @@
     <string name="loyalty_pr_text_1"><u>условия программы лояльности</u></string>
 
     <string name="rus_phone_code">+7</string>
+    <string name="only_cyrillic_error">Допустимы только кириллические символы!</string>
 </resources>

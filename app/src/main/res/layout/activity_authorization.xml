@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
-    tools:context=".AuthorizationActivity"
+    tools:context=".presenter.AuthorizationActivity"
 
     android:orientation="vertical"
     android:gravity="center_horizontal"
@@ -25,32 +25,37 @@
         android:layout_weight="2" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TILName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
         style="@style/LoginInputStyle">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TIETName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_name" />
+            android:hint="@string/hint_name"
 
+            android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TILLastname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
         style="@style/LoginInputStyle">
 
-
-    <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TIETLastname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_lastname" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TILPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
@@ -58,12 +63,13 @@
 
         style="@style/LoginInputStyle">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_phone_number"
-        android:inputType="phone" />
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TIETPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_phone_number"
+            android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     <Space
         android:layout_width="match_parent"

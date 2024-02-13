@@ -1,9 +1,10 @@
-package com.livmas.effective_mobile_test_app
+package com.livmas.effective_mobile_test_app.presenter
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.livmas.effective_mobile_test_app.R
 import com.livmas.effective_mobile_test_app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
