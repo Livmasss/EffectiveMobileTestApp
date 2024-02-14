@@ -6,7 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import androidx.core.view.children
+import androidx.core.view.get
 import androidx.fragment.app.viewModels
+import com.google.android.material.chip.Chip
 import com.livmas.effective_mobile_test_app.R
 import com.livmas.effective_mobile_test_app.databinding.FragmentCatalogBinding
 import com.livmas.effective_mobile_test_app.presenter.fragments.BaseNavigationFragment
@@ -29,6 +32,27 @@ class CatalogFragment : BaseNavigationFragment() {
         super.onViewCreated(view, savedInstanceState)
         mainActivity.setTitleResource(R.string.title_catalog_page)
 
+        setupSpinner()
+        setupTagChips()
+    }
+
+    private fun setupTagChips() {
+        binding.cgTags.setOnCheckedStateChangeListener { group, checkedIds ->
+            for (chip in group.children) {
+                chip as Chip
+                chip.isCloseIconVisible = false
+            }
+
+            if (checkedIds.size == 0) {
+                group.check(group[0].id)
+                return@setOnCheckedStateChangeListener
+            }
+
+            group.findViewById<Chip>(checkedIds[0]).isCloseIconVisible = true
+        }
+    }
+
+    private fun setupSpinner() {
         val spinner: Spinner = binding.spinner
 
         val adapter: ArrayAdapter<String> = ArrayAdapter<String>(

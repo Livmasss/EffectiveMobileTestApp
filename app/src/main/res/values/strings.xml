@@ -1,27 +1,43 @@
 <resources>
     <string name="app_name">EffectiveMobileTestApp</string>
-    <string name="title_home_page">Главная</string>
-    <string name="login">Войти</string>
-    <string name="hint_name">Name</string>
-    <string name="hint_lastname">Lastname</string>
-    <string name="hint_phone_number">Phone number</string>
-    <string name="loyalty_pr_text_0">Нажимая кнопку “Войти”, Вы принимаете</string>
-    <string name="loyalty_pr_text_1"><u>условия программы лояльности</u></string>
 
-    <string name="rus_phone_code">+7</string>
-    <string name="only_cyrillic_error">Допустимы только кириллические символы!</string>
+    <!-- Pages -->
+    <string name="title_home_page">Главная</string>
     <string name="title_catalog_page">Каталог</string>
     <string name="title_cart_page">Корзина</string>
     <string name="title_sales_page">Акции</string>
     <string name="title_profile_page">Профиль</string>
+
+    <!-- Authorization -->
+    <string name="login">Войти</string>
+
+    <string name="loyalty_pr_text_0">Нажимая кнопку “Войти”, Вы принимаете</string>
+    <string name="loyalty_pr_text_1"><u>условия программы лояльности</u></string>
+
+    <string name="hint_name">Имя</string>
+    <string name="hint_lastname">Фамилия</string>
+    <string name="hint_phone_number">Номер телефона</string>
+
+    <string name="rus_phone_code">+7</string>
+
+    <string name="only_cyrillic_error">Допустимы только кириллические символы!</string>
     <string name="input_empty_error">Значение не должно быть пустым!</string>
     <string name="phone_length_error">Номер телефона должен состоять из 10 цифр без кода региона!</string>
-    <string name="filter">Фильтр</string>
 
+    <!-- Catalog -->
 
     <string-array name="sorting_types">
-        <item>Рэйтинг</item>
-        <item>Уменьшение цены</item>
-        <item>Увеличение цены</item>
+        <item>По популярности</item>
+        <item>По уменьшению цены</item>
+        <item>По возрастанию цены</item>
     </string-array>
+
+    <string name="filter">Фильтры</string>
+
+    <string name="tag_all">Смотреть все</string>
+    <string name="tag_face">Лицо</string>
+    <string name="tag_body">Тело</string>
+    <string name="tag_suntan">Загар</string>
+    <string name="tag_mask">Маски</string>
+
 </resources>

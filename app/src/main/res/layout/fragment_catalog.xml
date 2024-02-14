@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".presenter.fragments.catalog.CatalogFragment">
 
-
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="wrap_content"
@@ -25,16 +24,80 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+>
 
         <LinearLayout
             android:id="@+id/llTags"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" />
-    </ScrollView>
+
+            android:orientation="horizontal">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/cgTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:checkedChip="@id/cTag_0"
+
+                app:singleLine="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/cTag_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/tag_all"
+
+                    style="@style/TagChipStyle"
+                    app:closeIconEnabled="true"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/cTag_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/tag_face"
+
+                    style="@style/TagChipStyle"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/cTag_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/tag_body"
+
+                    style="@style/TagChipStyle"/>
+
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/cTag_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/tag_suntan"
+
+                    style="@style/TagChipStyle"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/cTag_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/tag_mask"
+
+                    style="@style/TagChipStyle"/>
+
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
