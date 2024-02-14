@@ -13,7 +13,7 @@
         android:theme="@style/Theme.EffectiveMobileTestApp"
         tools:targetApi="31">
         <activity
-            android:name=".presenter.AuthorizationActivity"
+            android:name=".presenter.activities.auth.AuthorizationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
