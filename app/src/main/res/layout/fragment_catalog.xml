@@ -25,12 +25,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
->
+        app:layout_constraintTop_toBottomOf="@+id/spinner">
 
         <LinearLayout
             android:id="@+id/llTags"
@@ -51,53 +51,61 @@
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/cTag_0"
+                    style="@style/TagChipStyle"
                     android:layout_width="wrap_content"
+
                     android:layout_height="wrap_content"
 
                     android:text="@string/tag_all"
-
-                    style="@style/TagChipStyle"
-                    app:closeIconEnabled="true"/>
+                    app:closeIconEnabled="true" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/cTag_1"
+                    style="@style/TagChipStyle"
                     android:layout_width="wrap_content"
+
                     android:layout_height="wrap_content"
 
-                    android:text="@string/tag_face"
-
-                    style="@style/TagChipStyle"/>
+                    android:text="@string/tag_face" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/cTag_2"
+                    style="@style/TagChipStyle"
                     android:layout_width="wrap_content"
+
                     android:layout_height="wrap_content"
 
-                    android:text="@string/tag_body"
-
-                    style="@style/TagChipStyle"/>
+                    android:text="@string/tag_body" />
 
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/cTag_3"
+                    style="@style/TagChipStyle"
                     android:layout_width="wrap_content"
+
                     android:layout_height="wrap_content"
 
-                    android:text="@string/tag_suntan"
-
-                    style="@style/TagChipStyle"/>
+                    android:text="@string/tag_suntan" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/cTag_4"
+                    style="@style/TagChipStyle"
                     android:layout_width="wrap_content"
+
                     android:layout_height="wrap_content"
 
-                    android:text="@string/tag_mask"
-
-                    style="@style/TagChipStyle"/>
+                    android:text="@string/tag_mask" />
 
             </com.google.android.material.chip.ChipGroup>
         </LinearLayout>
     </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

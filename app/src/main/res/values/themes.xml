@@ -25,13 +25,4 @@
         </item>
     </style>
 
-    <style name="MainTextViewStyle">
-        <item name="android:textSize">20sp</item>
-        <item name="fontFamily">@font/sf_pro_display</item>
-    </style>
-
-    <style name="TitleTextViewStyle" parent="MainTextViewStyle">
-        <item name="android:textSize">32sp</item>
-        <item name="fontFamily">@font/sf_pro_display</item>
-    </style>
 </resources>
