@@ -7,19 +7,28 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.livmas.effective_mobile_test_app.presenter.home.HomeFragment"
-        android:label="@string/title_home"
+        android:name="com.livmas.effective_mobile_test_app.presenter.fragments.home.HomeFragment"
+        android:label="@string/title_home_page"
         tools:layout="@layout/fragment_home" />
-
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.livmas.effective_mobile_test_app.presenter.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
+        android:id="@+id/navigation_catalog"
+        android:name="com.livmas.effective_mobile_test_app.presenter.fragments.catalog.CatalogFragment"
+        android:label="fragment_catalog"
+        tools:layout="@layout/fragment_catalog" />
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.livmas.effective_mobile_test_app.presenter.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_cart"
+        android:name="com.livmas.effective_mobile_test_app.presenter.fragments.cart.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.livmas.effective_mobile_test_app.presenter.fragments.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/navigation_sales"
+        android:name="com.livmas.effective_mobile_test_app.presenter.fragments.sales.SalesFragment"
+        android:label="fragment_sales"
+        tools:layout="@layout/fragment_sales" />
+
 </navigation>

@@ -1,5 +1,6 @@
 package com.livmas.effective_mobile_test_app.presenter
 
+import android.content.Intent
 import android.os.Bundle
 import android.telephony.PhoneNumberFormattingTextWatcher
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,16 @@ class AuthorizationActivity : AppCompatActivity() {
         addNameOnTextChanged()
         addLastNameOnTextChanged()
         addPhoneOnTextChanged()
+
+        addLoginButtonListener()
+    }
+
+    private fun addLoginButtonListener() {
+        binding.bLogin.setOnClickListener {
+            startActivity(
+                Intent(this, MainActivity::class.java)
+            )
+        }
     }
 
     private fun addNameOnTextChanged() {

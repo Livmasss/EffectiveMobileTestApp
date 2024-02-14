@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">EffectiveMobileTestApp</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home_page">Главная</string>
     <string name="login">Войти</string>
     <string name="hint_name">Name</string>
     <string name="hint_lastname">Lastname</string>
@@ -12,4 +10,10 @@
 
     <string name="rus_phone_code">+7</string>
     <string name="only_cyrillic_error">Допустимы только кириллические символы!</string>
+    <string name="title_catalog_page">Каталог</string>
+    <string name="title_cart_page">Корзина</string>
+    <string name="title_sales_page">Акции</string>
+    <string name="title_profile_page">Профиль</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

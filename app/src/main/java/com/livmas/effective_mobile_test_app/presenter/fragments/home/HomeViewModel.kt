@@ -1,4 +1,4 @@
-package com.livmas.effective_mobile_test_app.presenter.home
+package com.livmas.effective_mobile_test_app.presenter.fragments.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
