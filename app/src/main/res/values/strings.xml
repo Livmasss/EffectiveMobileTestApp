@@ -16,4 +16,12 @@
     <string name="title_profile_page">Профиль</string>
     <string name="input_empty_error">Значение не должно быть пустым!</string>
     <string name="phone_length_error">Номер телефона должен состоять из 10 цифр без кода региона!</string>
+    <string name="filter">Фильтр</string>
+
+
+    <string-array name="sorting_types">
+        <item>Рэйтинг</item>
+        <item>Уменьшение цены</item>
+        <item>Увеличение цены</item>
+    </string-array>
 </resources>
