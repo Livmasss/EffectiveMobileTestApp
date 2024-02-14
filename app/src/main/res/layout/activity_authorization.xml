@@ -13,11 +13,11 @@
     android:padding="10dp">
 
     <TextView
+        style="@style/TitleTextViewStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login"
 
-        style="@style/TitleTextViewStyle"/>
+        android:layout_height="wrap_content"
+        android:text="@string/login" />
 
     <Space
         android:layout_width="match_parent"
@@ -35,9 +35,9 @@
             android:id="@+id/TIETName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_name"
 
-            android:inputType="text"/>
+            android:hint="@string/hint_name"
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -92,10 +92,11 @@
 
     <TextView
         android:id="@+id/tvLoyalty_0"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
         style="@style/TextViewLoyaltyPr"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
         android:text="@string/loyalty_pr_text_0" />
     <TextView
         android:id="@+id/tvLoyalty_1"

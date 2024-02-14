@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import com.livmas.effective_mobile_test_app.R
 import com.livmas.effective_mobile_test_app.databinding.ActivityAuthorizationBinding
-import com.livmas.effective_mobile_test_app.presenter.MainActivity
+import com.livmas.effective_mobile_test_app.presenter.activities.MainActivity
 import java.util.regex.Pattern
 
 class AuthorizationActivity : AppCompatActivity() {

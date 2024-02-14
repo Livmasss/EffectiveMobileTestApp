@@ -13,7 +13,7 @@
         android:theme="@style/Theme.EffectiveMobileTestApp"
         tools:targetApi="31">
         <activity
-            android:name=".presenter.activities.auth.AuthorizationActivity"
+            android:name=".presenter.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".presenter.MainActivity"
+        <activity android:name=".presenter.activities.auth.AuthorizationActivity"
             android:exported="true">
         </activity>
     </application>
