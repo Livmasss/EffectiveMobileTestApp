@@ -23,16 +23,15 @@ class AuthorizationActivity : AppCompatActivity() {
         binding = ActivityAuthorizationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initNameInput()
-        initLastnameInput()
-        initPhoneInput()
+        setupNameInput()
+        setupLastnameInput()
+        setupPhoneInput()
+        setupObservers()
 
-        initObservers()
-
-        addLoginButtonListener()
+        setupLoginButton()
     }
 
-    private fun addLoginButtonListener() {
+    private fun setupLoginButton() {
         binding.apply {
             bLogin.setOnClickListener {
                 if (!checkIsAllInputValid())
@@ -51,7 +50,7 @@ class AuthorizationActivity : AppCompatActivity() {
         }
     }
 
-    private fun initNameInput() {
+    private fun setupNameInput() {
         binding.apply {
             TIETName.doOnTextChanged { text, _, _, _ ->
                 TILName.error = getTextValidationErrorMessage(text)
@@ -60,14 +59,14 @@ class AuthorizationActivity : AppCompatActivity() {
         }
     }
 
-    private fun initLastnameInput() {
+    private fun setupLastnameInput() {
         binding.TIETLastname.doOnTextChanged { text, _, _, _ ->
             binding.TILLastname.error = getTextValidationErrorMessage(text)
             checkAvailableAndChangeButton(binding.TILPhone.error)
         }
     }
 
-    private fun initPhoneInput() {
+    private fun setupPhoneInput() {
         binding.TIETPhone.doOnTextChanged { text, _, _, _ ->
             binding.TILPhone.error = getPhoneValidationErrorMessage(text)
             checkAvailableAndChangeButton(binding.TILPhone.error)
@@ -75,7 +74,7 @@ class AuthorizationActivity : AppCompatActivity() {
         binding.TIETPhone.addTextChangedListener(PhoneNumberFormattingTextWatcher())
     }
 
-    private fun initObservers() {
+    private fun setupObservers() {
         binding.apply {
             viewModel.apply {
                 name.observe(this@AuthorizationActivity) {

@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.livmas.effective_mobile_test_app.R
 import com.livmas.effective_mobile_test_app.databinding.FragmentProfileBinding
-import com.livmas.effective_mobile_test_app.presenter.fragments.BaseNavigationFragment
+import com.livmas.ui.SendingFragment
 
-class ProfileFragment : BaseNavigationFragment() {
+class ProfileFragment : SendingFragment() {
 
     private val viewModel: ProfileViewModel by viewModels()
     private lateinit var binding: FragmentProfileBinding
@@ -24,6 +24,6 @@ class ProfileFragment : BaseNavigationFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mainActivity.setTitleResource(R.string.title_profile_page)
+        title = resources.getString(R.string.title_profile_page)
     }
 }

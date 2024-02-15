@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.livmas.effective_mobile_test_app.R
 import com.livmas.effective_mobile_test_app.databinding.FragmentCartBinding
-import com.livmas.effective_mobile_test_app.presenter.fragments.BaseNavigationFragment
+import com.livmas.ui.SendingFragment
 
-class CartFragment : BaseNavigationFragment() {
+class CartFragment : SendingFragment() {
 
     private val viewModel: CartViewModel by viewModels()
     private lateinit var binding: FragmentCartBinding
@@ -24,6 +24,7 @@ class CartFragment : BaseNavigationFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mainActivity.setTitleResource(R.string.title_cart_page)
+
+        title = resources.getString(R.string.title_cart_page)
     }
 }

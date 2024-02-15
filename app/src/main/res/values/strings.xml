@@ -24,25 +24,4 @@
     <string name="input_empty_error">Значение не должно быть пустым!</string>
     <string name="phone_length_error">Номер телефона должен состоять из 10 цифр без кода региона!</string>
 
-    <!-- Catalog -->
-
-    <string-array name="sorting_types">
-        <item>По популярности</item>
-        <item>По уменьшению цены</item>
-        <item>По возрастанию цены</item>
-    </string-array>
-
-    <string name="filter">Фильтры</string>
-
-    <string name="tag_all">Смотреть все</string>
-    <string name="tag_face">Лицо</string>
-    <string name="tag_body">Тело</string>
-    <string name="tag_suntan">Загар</string>
-    <string name="tag_mask">Маски</string>
-    <string name="discount_pattern">-%1$s%</string>
-    <string name="brackets_pattern">(%1$s)</string>
-    <string name="desc_like_button">Добавить в избранное</string>
-    <string name="desc_rating_star">Оценка</string>
-    <string name="desc_add_to_cart_button">Добавить в корзину</string>
-
 </resources>

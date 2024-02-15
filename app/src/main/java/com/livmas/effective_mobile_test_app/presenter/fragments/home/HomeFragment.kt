@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.livmas.effective_mobile_test_app.R
 import com.livmas.effective_mobile_test_app.databinding.FragmentHomeBinding
-import com.livmas.effective_mobile_test_app.presenter.fragments.BaseNavigationFragment
+import com.livmas.ui.SendingFragment
 
-class HomeFragment : BaseNavigationFragment() {
+class HomeFragment : SendingFragment() {
 
     private lateinit var binding: FragmentHomeBinding
 
@@ -23,6 +23,6 @@ class HomeFragment : BaseNavigationFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mainActivity.setTitleResource(R.string.title_home_page)
+        title = resources.getString(R.string.title_home_page)
     }
 }

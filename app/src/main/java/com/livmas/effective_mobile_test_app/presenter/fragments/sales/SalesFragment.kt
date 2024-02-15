@@ -7,9 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.livmas.effective_mobile_test_app.R
 import com.livmas.effective_mobile_test_app.databinding.FragmentSalesBinding
-import com.livmas.effective_mobile_test_app.presenter.fragments.BaseNavigationFragment
 
-class SalesFragment : BaseNavigationFragment() {
+class SalesFragment : com.livmas.ui.SendingFragment() {
 
     private val viewModel: SalesViewModel by viewModels()
     private lateinit var binding: FragmentSalesBinding
@@ -24,6 +23,6 @@ class SalesFragment : BaseNavigationFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mainActivity.setTitleResource(R.string.title_sales_page)
+        title = resources.getString(R.string.title_sales_page)
     }
 }

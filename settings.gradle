@@ -14,4 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "EffectiveMobileTestApp"
 include ':app'
-include ':app:ui'
+include ':catalog'
+include ':ui'
+include ':utils'

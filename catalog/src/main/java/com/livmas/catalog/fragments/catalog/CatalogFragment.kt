@@ -1,4 +1,4 @@
-package com.livmas.effective_mobile_test_app.presenter.fragments.catalog
+package com.livmas.catalog.fragments.catalog
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,13 +9,15 @@ import android.widget.Spinner
 import androidx.core.view.children
 import androidx.core.view.get
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.chip.Chip
-import com.livmas.effective_mobile_test_app.R
-import com.livmas.effective_mobile_test_app.databinding.FragmentCatalogBinding
-import com.livmas.effective_mobile_test_app.presenter.fragments.BaseNavigationFragment
+import com.livmas.catalog.R
+import com.livmas.catalog.adapters.CatalogRecyclerAdapter
+import com.livmas.catalog.databinding.FragmentCatalogBinding
+import com.livmas.ui.SendingFragment
 
 
-class CatalogFragment : BaseNavigationFragment() {
+class CatalogFragment : SendingFragment() {
 
     private val viewModel: CatalogViewModel by viewModels()
     private lateinit var binding: FragmentCatalogBinding
@@ -30,10 +32,11 @@ class CatalogFragment : BaseNavigationFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mainActivity.setTitleResource(R.string.title_catalog_page)
+        title = resources.getString(R.string.title_catalog_page)
 
         setupSpinner()
         setupTagChips()
+        setupCatalog()
     }
 
     private fun setupTagChips() {
@@ -63,5 +66,16 @@ class CatalogFragment : BaseNavigationFragment() {
         adapter.setDropDownViewResource(R.layout.sorting_spinner_layout)
 
         spinner.adapter = adapter
+    }
+
+    private fun setupCatalog() {
+        binding.rvCatalog.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.rvCatalog.adapter =
+            viewModel.catalogContent.value?.let {
+                CatalogRecyclerAdapter(
+                    resources,
+                    it
+                )
+            }
     }
 }
