@@ -2,5 +2,5 @@
     <dimen name="preview_item_small_text_size">9sp</dimen>
     <dimen name="preview_rating_padding_left">3dp</dimen>
     <dimen name="preview_like_button_size">25dp</dimen>
-    <dimen name="preview_item_viewpager_size">100dp</dimen>
+    <dimen name="preview_item_viewpager_size">125dp</dimen>
 </resources>

@@ -6,8 +6,8 @@
     android:layout_height="wrap_content">
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/imageView"
-        android:layout_width="@dimen/preview_item_viewpager_size"
+        android:id="@+id/vpPhotos"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/preview_item_viewpager_size"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,17 +27,16 @@
         style="@style/ImageButtonStyle"
         android:contentDescription="@string/desc_like_button" />
 
-    <me.relex.circleindicator.CircleIndicator
-        android:id="@+id/mockView"
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/ciIndicator"
         android:layout_width="0dp"
         android:layout_height="10dp"
 
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/vpPhotos"
+        app:layout_constraintStart_toStartOf="@+id/vpPhotos"
+        app:layout_constraintTop_toBottomOf="@+id/vpPhotos"
 
-        android:layout_marginTop="5dp"
-        android:foregroundTint="?attr/colorPrimary"/>
+        android:layout_marginTop="5dp" />
 
     <TextView
         android:id="@+id/tvOldCost"
@@ -48,7 +47,7 @@
         android:textSize="9sp"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mockView" />
+        app:layout_constraintTop_toBottomOf="@+id/ciIndicator" />
 
     <TextView
         android:id="@+id/tvCost"

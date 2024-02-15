@@ -1,11 +1,13 @@
 package com.livmas.catalog.fragments.catalog
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.children
 import androidx.core.view.get
 import androidx.fragment.app.viewModels
@@ -37,6 +39,7 @@ class CatalogFragment : SendingFragment() {
         setupSpinner()
         setupTagChips()
         setupCatalog()
+        setupImages()
     }
 
     private fun setupTagChips() {
@@ -78,4 +81,23 @@ class CatalogFragment : SendingFragment() {
                 )
             }
     }
+
+    private fun setupImages() {
+        val images = ArrayList<Drawable>()
+
+        images.apply {
+            addDrawable(getDrawableById(R.drawable.catalog_image_0))
+            addDrawable(getDrawableById(R.drawable.catalog_image_1))
+            addDrawable(getDrawableById(R.drawable.catalog_image_2))
+            addDrawable(getDrawableById(R.drawable.catalog_image_3))
+            addDrawable(getDrawableById(R.drawable.catalog_image_4))
+            addDrawable(getDrawableById(R.drawable.catalog_image_5))
+        }
+
+        viewModel.images = images
+    }
+
+    private fun getDrawableById(resId: Int) =
+        ResourcesCompat.getDrawable(resources, resId, requireActivity().theme)
+    private fun ArrayList<Drawable>.addDrawable(drawable: Drawable?) = drawable?.let { add(it) }
 }
