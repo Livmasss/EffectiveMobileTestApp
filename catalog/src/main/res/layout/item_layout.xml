@@ -36,7 +36,10 @@
         app:layout_constraintStart_toStartOf="@+id/vpPhotos"
         app:layout_constraintTop_toBottomOf="@+id/vpPhotos"
 
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+
+        app:ci_drawable="@drawable/ic_indicator_active"
+        app:ci_drawable_unselected="@drawable/ic_indicator_inactive"/>
 
     <TextView
         android:id="@+id/tvOldCost"

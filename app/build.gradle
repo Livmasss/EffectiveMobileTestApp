@@ -12,7 +12,7 @@ android {
         minSdk 26
         targetSdk 34
         versionCode 1
-        versionName "1.9"
+        versionName "1.10"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -43,6 +43,7 @@ dependencies {
     implementation project(path: ':ui')
     implementation project(path: ':utils')
     implementation project(path: ':catalog')
+    implementation project(path: ':data')
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"

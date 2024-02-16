@@ -36,10 +36,13 @@ class CatalogFragment : SendingFragment() {
         super.onViewCreated(view, savedInstanceState)
         title = resources.getString(R.string.title_catalog_page)
 
-        setupSpinner()
-        setupTagChips()
-        setupCatalog()
-        setupImages()
+        requireActivity().runOnUiThread {
+
+            setupSpinner()
+            setupTagChips()
+            setupAdapterData()
+            setupCatalogRecycler()
+        }
     }
 
     private fun setupTagChips() {
@@ -71,18 +74,16 @@ class CatalogFragment : SendingFragment() {
         spinner.adapter = adapter
     }
 
-    private fun setupCatalog() {
+    private fun setupCatalogRecycler() {
         binding.rvCatalog.layoutManager = GridLayoutManager(requireContext(), 2)
-        binding.rvCatalog.adapter =
-            viewModel.catalogContent.value?.let {
-                CatalogRecyclerAdapter(
-                    resources,
-                    it
-                )
-            }
+
+        viewModel.catalogContent.observe(viewLifecycleOwner) {
+            binding.rvCatalog.adapter = CatalogRecyclerAdapter(
+                resources, it )
+        }
     }
 
-    private fun setupImages() {
+    private fun setupAdapterData() {
         val images = ArrayList<Drawable>()
 
         images.apply {
@@ -94,7 +95,7 @@ class CatalogFragment : SendingFragment() {
             addDrawable(getDrawableById(R.drawable.catalog_image_5))
         }
 
-        viewModel.images = images
+        viewModel.fillAdapterWithData(images)
     }
 
     private fun getDrawableById(resId: Int) =

@@ -3,7 +3,7 @@ package com.livmas.catalog.models
 import android.graphics.drawable.Drawable
 
 data class CatalogItem (
-    val images: ArrayList<Drawable>,
+    val images: List<Drawable>,
 
     // Price with currency symbol
     val price: String,
