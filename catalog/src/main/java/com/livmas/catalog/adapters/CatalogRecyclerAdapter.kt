@@ -1,6 +1,7 @@
 package com.livmas.catalog.adapters
 
 import android.content.res.Resources
+import android.graphics.drawable.Drawable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,6 @@ import com.livmas.catalog.R
 import com.livmas.catalog.databinding.ItemLayoutBinding
 import com.livmas.catalog.models.CatalogItem
 import com.livmas.utils.CATALOG_TAG
-import java.util.ArrayList
 
 class CatalogRecyclerAdapter(private val resources: Resources, private val data: List<CatalogItem>): RecyclerView.Adapter<CatalogRecyclerAdapter.ItemHolder>() {
     inner class ItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -31,7 +31,7 @@ class CatalogRecyclerAdapter(private val resources: Resources, private val data:
                     tvRating.text = item.rating.toString()
                     tvReviewsCount.text = resources.getString(R.string.brackets_pattern, item.reviewsCount)
 
-                    setupPager()
+                    setupPager(item.images)
                     setupLikeButton()
                 }
             }
@@ -42,17 +42,9 @@ class CatalogRecyclerAdapter(private val resources: Resources, private val data:
             }
         }
 
-        private fun setupPager() {
-            binding.vpPhotos.adapter = PhotoPagerAdapter(ArrayList<Int>().run {
-                add(R.drawable.catalog_image_0)
-                add(R.drawable.catalog_image_1)
-                add(R.drawable.catalog_image_2)
-                add(R.drawable.catalog_image_3)
-                add(R.drawable.catalog_image_4)
-                add(R.drawable.catalog_image_5)
+        private fun setupPager(images: List<Drawable>) {
+            binding.vpPhotos.adapter = PhotoPagerAdapter(images)
 
-                this
-            })
             binding.ciIndicator.setViewPager(binding.vpPhotos)
         }
     }

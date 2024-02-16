@@ -135,4 +135,5 @@ class CatalogViewModel : ViewModel() {
             "mask" -> ItemTag.Mask
             else -> null
         }
+
 }

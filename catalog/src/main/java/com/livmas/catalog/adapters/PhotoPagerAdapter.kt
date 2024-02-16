@@ -1,5 +1,6 @@
 package com.livmas.catalog.adapters
 
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.livmas.catalog.R
 import com.livmas.catalog.databinding.ItemPhotoLayoutBinding
 
-internal class PhotoPagerAdapter(private val photosRes: ArrayList<Int>): RecyclerView.Adapter<PhotoPagerAdapter.PhotoViewHolder>() {
+internal class PhotoPagerAdapter(private val photosRes: List<Drawable>): RecyclerView.Adapter<PhotoPagerAdapter.PhotoViewHolder>() {
     inner class PhotoViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val binding = ItemPhotoLayoutBinding.bind(itemView)
     }
@@ -21,7 +22,7 @@ internal class PhotoPagerAdapter(private val photosRes: ArrayList<Int>): Recycle
     }
 
     override fun onBindViewHolder(holder: PhotoPagerAdapter.PhotoViewHolder, position: Int) {
-        holder.binding.ivPhoto.setImageResource(photosRes[position])
+        holder.binding.ivPhoto.setImageDrawable(photosRes[position])
     }
 
     override fun getItemCount(): Int = photosRes.size
