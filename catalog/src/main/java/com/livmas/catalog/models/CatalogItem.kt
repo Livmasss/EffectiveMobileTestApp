@@ -6,7 +6,6 @@ import com.livmas.utils.models.ItemTag
 data class CatalogItem (
     val images: List<Drawable>,
 
-    // Price with currency symbol
     val price: Int,
     val oldPrice: Int,
     val unit: Char,

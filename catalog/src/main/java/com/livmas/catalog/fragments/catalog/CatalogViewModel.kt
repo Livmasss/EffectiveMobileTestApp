@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.livmas.catalog.CatalogManager
 import com.livmas.catalog.models.CatalogItem
 import com.livmas.catalog.models.SortingMode
 import com.livmas.data.repositories.CatalogRepository
@@ -22,13 +23,25 @@ class CatalogViewModel : ViewModel() {
         get() = mutableSortingMode
     private var mutableSortingMode: SortingMode = SortingMode.Rating
 
+    val selectedTag: ItemTag?
+        get() = mutableSelectedTag
+    private var mutableSelectedTag: ItemTag? = null
+
     private val catalogRepository = CatalogRepository()
-    private var fetchedData: List<CatalogItem>? = null
+    private val catalogManager = CatalogManager()
 
     fun setSortMode(mode: SortingMode) {
         mutableSortingMode = mode
+        mutableCatalogContent.postValue(catalogManager.sortFetchedData(mode))
+    }
 
-        mutableCatalogContent.postValue(sortedFetchedData())
+    fun setTag(tag: ItemTag?) {
+        mutableSelectedTag = tag
+        mutableCatalogContent.postValue( if (tag != null)
+            catalogManager.filterByTag(tag)
+        else
+            catalogManager.removeTagFilter()
+        )
     }
 
     private fun chooseImages(id: String, images: List<Drawable>): List<Drawable> {
@@ -90,20 +103,9 @@ class CatalogViewModel : ViewModel() {
 
     fun fillAdapterWithData(images: ArrayList<Drawable>) {
         CoroutineScope(Dispatchers.IO).launch {
-            fetchedData = fetchData(images)
-
-            mutableCatalogContent.postValue(sortedFetchedData())
-        }
-    }
-
-    //Returns sorted list from fetchedData variable, based on sortingMode
-    private fun sortedFetchedData(): List<CatalogItem>? {
-        return fetchedData?.run {
-            when (sortingMode) {
-                SortingMode.Rating -> sortedByDescending { it.rating }
-                SortingMode.Descend -> sortedByDescending { it.price }
-                SortingMode.Increase -> sortedBy { it.price }
-            }
+            catalogManager.setData(fetchData(images))
+            selectedTag?.let { catalogManager.filterByTag(it) }
+            mutableCatalogContent.postValue(catalogManager.sortFetchedData(mutableSortingMode))
         }
     }
 
@@ -135,5 +137,4 @@ class CatalogViewModel : ViewModel() {
             "mask" -> ItemTag.Mask
             else -> null
         }
-
 }

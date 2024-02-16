@@ -21,6 +21,7 @@ import com.livmas.catalog.databinding.FragmentCatalogBinding
 import com.livmas.catalog.models.SortingMode
 import com.livmas.ui.SendingFragment
 import com.livmas.utils.CATALOG_TAG
+import com.livmas.utils.models.ItemTag
 
 class CatalogFragment : SendingFragment() {
 
@@ -60,7 +61,14 @@ class CatalogFragment : SendingFragment() {
                 return@setOnCheckedStateChangeListener
             }
 
-            group.findViewById<Chip>(checkedIds[0]).isCloseIconVisible = true
+            val checkedChip = group.findViewById<Chip>(checkedIds[0])
+            checkedChip.isCloseIconVisible = true
+
+            val index = group.indexOfChild(checkedChip) - 1
+            if (index == -1)
+                viewModel.setTag(null)
+            else
+                viewModel.setTag(ItemTag.values()[index])
         }
     }
 
@@ -88,7 +96,7 @@ class CatalogFragment : SendingFragment() {
             binding.rvCatalog.adapter = CatalogRecyclerAdapter(
                 resources, it
             )
-            binding.rvCatalog.adapter?.notifyItemRangeChanged(0, it.size)
+            binding.rvCatalog.adapter?.notifyDataSetChanged()
             Log.i(CATALOG_TAG, "Catalog size: ${it.size}")
 
             binding.pbLoading.visibility = View.GONE
