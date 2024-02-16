@@ -1,6 +1,7 @@
 package com.livmas.catalog.adapters
 
 import android.content.res.Resources
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.livmas.catalog.R
 import com.livmas.catalog.databinding.ItemLayoutBinding
 import com.livmas.catalog.models.CatalogItem
+import com.livmas.utils.CATALOG_TAG
 import java.util.ArrayList
 
 class CatalogRecyclerAdapter(private val resources: Resources, private val data: List<CatalogItem>): RecyclerView.Adapter<CatalogRecyclerAdapter.ItemHolder>() {
@@ -17,19 +19,28 @@ class CatalogRecyclerAdapter(private val resources: Resources, private val data:
 
         fun bind(item: CatalogItem) =
             binding.apply {
-                tvCost.text = item.price
-                tvOldCost.text = item.oldPrice
+                item.apply {
+                    tvCost.text = resources.getString(R.string.price_pattern, price, unit)
+                    tvOldCost.text = resources.getString(R.string.price_pattern, oldPrice, unit)
 
-                tvItemTitle.text = item.title
-                tvItemSubtitle.text = item.subtitle
+                    tvItemTitle.text = item.title
+                    tvItemSubtitle.text = item.subtitle
 
-                tvDiscount.text = resources.getString(R.string.discount_pattern, item.discount)
+                    tvDiscount.text = resources.getString(R.string.discount_pattern, item.discount)
 
-                tvRating.text = item.rating.toString()
-                tvReviewsCount.text = resources.getString(R.string.brackets_pattern, item.reviewsCount)
+                    tvRating.text = item.rating.toString()
+                    tvReviewsCount.text = resources.getString(R.string.brackets_pattern, item.reviewsCount)
 
-                setupPager()
+                    setupPager()
+                    setupLikeButton()
+                }
             }
+
+        private fun setupLikeButton() {
+            binding.ibLike.setOnClickListener {
+                Log.i(CATALOG_TAG, "Item liked")
+            }
+        }
 
         private fun setupPager() {
             binding.vpPhotos.adapter = PhotoPagerAdapter(ArrayList<Int>().run {

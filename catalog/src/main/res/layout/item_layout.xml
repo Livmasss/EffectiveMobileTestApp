@@ -14,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
+    <ToggleButton
         android:id="@+id/ibLike"
 
         android:layout_width="@dimen/preview_like_button_size"
@@ -22,9 +22,9 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_like"
 
-        style="@style/ImageButtonStyle"
+        style="@style/toggleButton"
+        android:background="@drawable/ic_like_toggle"
         android:contentDescription="@string/desc_like_button" />
 
     <me.relex.circleindicator.CircleIndicator3

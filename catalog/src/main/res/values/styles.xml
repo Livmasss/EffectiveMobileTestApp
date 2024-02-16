@@ -29,4 +29,10 @@
         <item name="android:textSize">@dimen/preview_item_small_text_size</item>
     </style>
 
+    <style name="toggleButton"  parent="Theme.Base">
+        <item name="android:textOn">@null</item>
+        <item name="android:textOff">@null</item>
+    </style>
+
+
 </resources>
