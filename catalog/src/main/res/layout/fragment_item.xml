@@ -37,41 +37,320 @@
             style="@style/ImageButtonStyle"/>
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="match_parent">
 
-        <ToggleButton
-            android:id="@+id/ibLike"
-
-            style="@style/toggleButton"
-            android:layout_width="@dimen/preview_like_button_size"
-            android:layout_height="@dimen/preview_like_button_size"
-
-            android:background="@drawable/ic_like_toggle"
-            android:contentDescription="@string/desc_like_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/includePager" />
-
-        <include
-            android:id="@+id/includePager"
-
-            android:layout_height="300dp"
+        <LinearLayout
             android:layout_width="match_parent"
-
-            layout="@layout/pager_indicator_layout"/>
-
-        <ImageButton
-            style="@style/ImageButtonStyle"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/ic_question"
-            android:contentDescription="@string/question"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
 
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <ToggleButton
+                    android:id="@+id/ibLike"
+
+                    style="@style/toggleButton"
+                    android:layout_width="@dimen/preview_like_button_size"
+                    android:layout_height="@dimen/preview_like_button_size"
+
+                    android:background="@drawable/ic_like_toggle"
+                    android:contentDescription="@string/desc_like_button"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/includePager" />
+
+                <include
+                    android:id="@+id/includePager"
+
+                    android:layout_height="300dp"
+                    android:layout_width="match_parent"
+
+                    layout="@layout/pager_indicator_layout"/>
+
+                <ImageButton
+                    style="@style/ImageButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/ic_question"
+                    android:contentDescription="@string/question"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginVertical="@dimen/item_vertical_margin"
+
+                android:text="@string/title"
+                android:textSize="15sp"
+                android:textColor="@color/grey"/>
+
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginVertical="@dimen/item_vertical_margin"
+
+                android:text="@string/subtitle" />
+
+            <TextView
+                android:id="@+id/tvAvailableCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginVertical="@dimen/item_vertical_margin"
+
+                android:text="@string/available_pattern"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/item_small_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+
+                android:background="@color/light_grey"
+                android:layout_marginVertical="@dimen/item_vertical_margin"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginVertical="@dimen/item_vertical_margin">
+
+                <RatingBar
+                    android:id="@+id/rbRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:theme="@style/RatingBarStyle"
+                    style="?android:attr/ratingBarStyleSmall"
+
+                    android:rating="3.5"
+                    android:numStars="5"
+                    android:isIndicator="true"/>
+
+                <TextView
+                    android:id="@+id/tvRating"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    style="@style/ItemFeedbackText"
+                    android:text="123" />
+
+                <ImageView
+                    android:layout_width="3dp"
+                    android:layout_height="3dp"
+                    android:background="@drawable/dot_bg"/>
+
+                <TextView
+                    android:id="@+id/tvReviewsCount"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    style="@style/ItemFeedbackText"
+                    android:text="@string/review_one_count"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+
+                android:layout_marginVertical="6dp">
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginEnd="@dimen/item_feedback_margin"
+                    android:text="@string/price_pattern"/>
+
+                <TextView
+                    android:id="@+id/tvOldPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_margin="@dimen/item_feedback_margin"
+                    android:textSize="12sp"
+
+                    android:text="@string/price_pattern"
+                    android:textColor="@color/grey"/>
+
+                <TextView
+                    android:id="@+id/tvDiscount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_margin="@dimen/item_feedback_margin"
+
+                    style="@style/DiscountViewStyle"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/description"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="@drawable/producer_bg">
+                <TextView
+                    android:id="@+id/tvBrandTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginStart="5dp" />
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <View
+                    android:id="@+id/vector_1_st"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_arrow_goto" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                style="@style/ContentTextStyle"
+
+                android:text="@string/description"/>
+
+            <TextView
+                android:id="@+id/tvHide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:clickable="true"
+                style="@style/ContentTextStyle"
+                android:textColor="@color/grey"
+
+                android:text="@string/hide"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/characteristics"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCharacteristicsList"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ingredients"/>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    style="@style/ImageButtonStyle"
+
+                    android:src="@drawable/ic_copy"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvIngredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                style="@style/ContentTextStyle"
+
+                android:maxLines="2"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/tvHideIngredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                style="@style/ContentTextStyle"
+                android:textColor="@color/grey"
+
+                android:clickable="true"
+                android:text="@string/show"/>
+
+            <LinearLayout
+                android:id="@+id/llBuyButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                style="@style/LinearLayoutButton">
+
+
+                <TextView
+                    android:id="@+id/tvPriceBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginEnd="@dimen/item_feedback_margin"
+
+                    android:textColor="@color/white"
+                    android:text="@string/price_pattern"/>
+
+                <TextView
+                    android:id="@+id/tvOldPriceBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_margin="@dimen/item_feedback_margin"
+                    android:textSize="10sp"
+
+                    android:text="@string/price_pattern"
+                    android:textColor="@color/light_pink"/>
+
+                <androidx.slidingpanelayout.widget.SlidingPaneLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textColor="@color/white"
+
+                    android:text="@string/add_to_cart"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

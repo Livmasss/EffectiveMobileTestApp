@@ -110,8 +110,9 @@ class CatalogViewModel : ViewModel() {
     }
 
     private fun fetchData(images: ArrayList<Drawable>): List<CatalogItem> {
-        return catalogRepository.getItems()?.map {
+        return catalogRepository.getAllItems()?.map {
             CatalogItem(
+                it.id,
                 chooseImages(it.id, images),
                 it.price.priceWithDiscount.toInt(),
                 it.price.price.toInt(),
@@ -122,8 +123,8 @@ class CatalogViewModel : ViewModel() {
                 it.tags.mapNotNull { tag ->
                     getItemTagByString(tag)
                 },
-                it.feedback?.rating ?: 0f,
-                it.feedback?.count ?: 0,
+                it.feedback.rating,
+                it.feedback.count,
                 false
             )
         } ?: arrayListOf()

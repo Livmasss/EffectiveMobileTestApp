@@ -5,9 +5,12 @@ data class ResponseCatalogItem (
     val title: String,
     val subtitle: String,
     val price: ItemPrice,
-    val feedback: ItemFeedback?,
+    val feedback: ItemFeedback,
     val tags: List<String>,
-    val description: String
+    val available: Int,
+    val description: String,
+    val info: List<ItemCharacteristics>,
+    val ingredients: String
     ) {
 
     data class ItemPrice(

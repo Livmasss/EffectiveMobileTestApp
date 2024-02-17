@@ -8,16 +8,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
-import com.livmas.catalog.CatalogManager
 import com.livmas.catalog.R
 import com.livmas.catalog.databinding.ItemLayoutBinding
+import com.livmas.catalog.fragments.item.ItemKeeper
 import com.livmas.catalog.models.CatalogItem
+import com.livmas.catalog.models.ItemModel
+import com.livmas.data.repositories.CatalogRepository
 import com.livmas.utils.CATALOG_TAG
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class CatalogRecyclerAdapter(
+internal class CatalogRecyclerAdapter(
     private val resources: Resources,
     private val data: List<CatalogItem>,
-    private val navController: NavController
+    private val navController: NavController,
 ): RecyclerView.Adapter<CatalogRecyclerAdapter.ItemHolder>() {
 
     inner class ItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -49,7 +54,15 @@ class CatalogRecyclerAdapter(
         fun setupItemListener(item: CatalogItem) {
             binding.root.setOnClickListener {
                 Log.d(CATALOG_TAG, "Item clicked")
-                CatalogManager.openedItem = item
+                CoroutineScope(Dispatchers.IO).launch {
+                    ItemKeeper.openedItem =
+                        CatalogRepository.instance.getItemById(item.id)?.let { response ->
+                            ItemModel(
+                                response,
+                                item.images
+                            )
+                        }
+                }
                 navController.navigate(R.id.action_catalog_navigation_main_to_catalog_navigation_item)
             }
         }

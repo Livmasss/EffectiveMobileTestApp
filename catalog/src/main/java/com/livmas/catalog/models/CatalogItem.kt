@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable
 import com.livmas.utils.models.ItemTag
 
 data class CatalogItem (
+    val id: String,
     val images: List<Drawable>,
 
     val price: Int,
