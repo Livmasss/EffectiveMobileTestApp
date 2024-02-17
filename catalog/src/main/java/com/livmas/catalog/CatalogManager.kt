@@ -5,6 +5,10 @@ import com.livmas.catalog.models.SortingMode
 import com.livmas.utils.models.ItemTag
 
 internal class CatalogManager {
+    companion object {
+        var openedItem: CatalogItem? = null
+    }
+
     private var initialData: List<CatalogItem>? = null
     private var filteredData: List<CatalogItem>? = initialData
 

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
+import com.livmas.catalog.CatalogManager
 import com.livmas.catalog.R
 import com.livmas.catalog.databinding.ItemLayoutBinding
 import com.livmas.catalog.models.CatalogItem
@@ -36,29 +37,27 @@ class CatalogRecyclerAdapter(
                     tvRating.text = item.rating.toString()
                     tvReviewsCount.text = resources.getString(R.string.brackets_pattern, item.reviewsCount)
 
-                    setupPager(item.images)
-                    setupLikeButton()
-                    setupItemListener()
+                    bindPager(item.images)
                 }
             }
 
-        private fun setupItemListener() {
+        private fun bindPager(images: List<Drawable>) {
+            binding.includePager.vpPhotos.adapter = PhotoPagerAdapter(images)
+            binding.includePager.ciIndicator.setViewPager(binding.includePager.vpPhotos)
+        }
+
+        fun setupItemListener(item: CatalogItem) {
             binding.root.setOnClickListener {
                 Log.d(CATALOG_TAG, "Item clicked")
+                CatalogManager.openedItem = item
                 navController.navigate(R.id.action_catalog_navigation_main_to_catalog_navigation_item)
             }
         }
 
-        private fun setupLikeButton() {
+        fun setupLikeButton() {
             binding.ibLike.setOnClickListener {
                 Log.i(CATALOG_TAG, "Item liked")
             }
-        }
-
-        private fun setupPager(images: List<Drawable>) {
-            binding.includePager.vpPhotos.adapter = PhotoPagerAdapter(images)
-
-            binding.includePager.ciIndicator.setViewPager(binding.includePager.vpPhotos)
         }
     }
 
@@ -69,7 +68,12 @@ class CatalogRecyclerAdapter(
     }
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
-        holder.bind(data[position])
+        holder.apply {
+            bind(data[position])
+
+            setupItemListener(data[position])
+            setupLikeButton()
+        }
     }
 
     override fun getItemCount(): Int = data.size
