@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph_catalog"
+    app:startDestination="@id/catalog_navigation_main">
+
+    <fragment
+        android:id="@+id/catalog_navigation_main"
+        android:name="com.livmas.catalog.fragments.catalog.CatalogFragment"
+        android:label="fragment_catalog"
+        tools:layout="@layout/fragment_catalog" >
+        <action
+            android:id="@+id/action_catalog_navigation_main_to_catalog_navigation_item"
+            app:destination="@id/catalog_navigation_item" />
+    </fragment>
+    <fragment
+        android:id="@+id/catalog_navigation_item"
+        android:name="com.livmas.catalog.fragments.catalog.item.ItemFragment"
+        android:label="fragment_item"
+        tools:layout="@layout/fragment_item" />
+</navigation>

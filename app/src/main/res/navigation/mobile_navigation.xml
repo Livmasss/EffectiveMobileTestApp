@@ -25,10 +25,7 @@
         android:name="com.livmas.effective_mobile_test_app.presenter.fragments.sales.SalesFragment"
         android:label="fragment_sales"
         tools:layout="@layout/fragment_sales" />
-    <fragment
-        android:id="@+id/navigation_catalog"
-        android:name="com.livmas.catalog.fragments.catalog.CatalogFragment"
-        android:label="fragment_catalog"
-        tools:layout="@layout/fragment_catalog" />
+    <include
+        app:graph="@navigation/navigation_graph_catalog"/>
 
 </navigation>

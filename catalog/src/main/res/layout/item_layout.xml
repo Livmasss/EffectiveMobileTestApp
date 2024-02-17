@@ -3,43 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="160dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vpPhotos"
-        android:layout_width="match_parent"
+    android:background="@drawable/catalog_item_bg"
+    android:layout_margin="10dp"
+    android:paddingStart="@dimen/item_padding"
+    android:paddingTop="@dimen/item_padding">
+
+    <include
+        android:id="@+id/includePager"
         android:layout_height="@dimen/preview_item_viewpager_size"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        layout="@layout/pager_indicator_layout"/>
 
     <ToggleButton
         android:id="@+id/ibLike"
 
-        android:layout_width="@dimen/preview_like_button_size"
-        android:layout_height="@dimen/preview_like_button_size"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
         style="@style/toggleButton"
+        android:layout_width="@dimen/preview_like_button_size"
+
+        android:layout_height="@dimen/preview_like_button_size"
         android:background="@drawable/ic_like_toggle"
-        android:contentDescription="@string/desc_like_button" />
 
-    <me.relex.circleindicator.CircleIndicator3
-        android:id="@+id/ciIndicator"
-        android:layout_width="0dp"
-        android:layout_height="10dp"
-
-        app:layout_constraintEnd_toEndOf="@+id/vpPhotos"
-        app:layout_constraintStart_toStartOf="@+id/vpPhotos"
-        app:layout_constraintTop_toBottomOf="@+id/vpPhotos"
-
-        android:layout_marginTop="5dp"
-
-        app:ci_drawable="@drawable/ic_indicator_active"
-        app:ci_drawable_unselected="@drawable/ic_indicator_inactive"/>
+        android:contentDescription="@string/desc_like_button"
+        app:layout_constraintStart_toStartOf="@+id/bAddToCart"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvOldCost"
@@ -50,7 +38,7 @@
         android:textSize="9sp"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ciIndicator" />
+        app:layout_constraintTop_toBottomOf="@+id/includePager" />
 
     <TextView
         android:id="@+id/tvCost"
@@ -143,7 +131,7 @@
     <ImageButton
         android:id="@+id/bAddToCart"
         android:layout_width="30dp"
-        android:layout_height="29dp"
+        android:layout_height="30dp"
 
         android:background="@drawable/preview_item_buy_button_bg"
         android:contentDescription="@string/desc_add_to_cart_button"

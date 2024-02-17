@@ -6,15 +6,20 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.livmas.catalog.R
 import com.livmas.catalog.databinding.ItemLayoutBinding
 import com.livmas.catalog.models.CatalogItem
 import com.livmas.utils.CATALOG_TAG
 
-class CatalogRecyclerAdapter(private val resources: Resources, private val data: List<CatalogItem>): RecyclerView.Adapter<CatalogRecyclerAdapter.ItemHolder>() {
-    inner class ItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class CatalogRecyclerAdapter(
+    private val resources: Resources,
+    private val data: List<CatalogItem>,
+    private val navController: NavController
+): RecyclerView.Adapter<CatalogRecyclerAdapter.ItemHolder>() {
 
+    inner class ItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemLayoutBinding.bind(itemView)
 
         fun bind(item: CatalogItem) =
@@ -33,8 +38,16 @@ class CatalogRecyclerAdapter(private val resources: Resources, private val data:
 
                     setupPager(item.images)
                     setupLikeButton()
+                    setupItemListener()
                 }
             }
+
+        private fun setupItemListener() {
+            binding.root.setOnClickListener {
+                Log.d(CATALOG_TAG, "Item clicked")
+                navController.navigate(R.id.action_catalog_navigation_main_to_catalog_navigation_item)
+            }
+        }
 
         private fun setupLikeButton() {
             binding.ibLike.setOnClickListener {
@@ -43,9 +56,9 @@ class CatalogRecyclerAdapter(private val resources: Resources, private val data:
         }
 
         private fun setupPager(images: List<Drawable>) {
-            binding.vpPhotos.adapter = PhotoPagerAdapter(images)
+            binding.includePager.vpPhotos.adapter = PhotoPagerAdapter(images)
 
-            binding.ciIndicator.setViewPager(binding.vpPhotos)
+            binding.includePager.ciIndicator.setViewPager(binding.includePager.vpPhotos)
         }
     }
 

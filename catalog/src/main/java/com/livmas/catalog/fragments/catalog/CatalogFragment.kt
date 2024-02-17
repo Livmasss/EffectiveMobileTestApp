@@ -93,12 +93,14 @@ class CatalogFragment : SendingFragment() {
             if (it == null)
                 return@observe
 
-            binding.rvCatalog.adapter = CatalogRecyclerAdapter(
-                resources, it
-            )
+            binding.rvCatalog.adapter = navController?.let { controller ->
+                CatalogRecyclerAdapter(
+                    resources, it, controller
+                )
+            }
+
             binding.rvCatalog.adapter?.notifyDataSetChanged()
             Log.i(CATALOG_TAG, "Catalog size: ${it.size}")
-
             binding.pbLoading.visibility = View.GONE
         }
     }
