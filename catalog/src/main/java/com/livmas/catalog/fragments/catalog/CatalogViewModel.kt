@@ -13,7 +13,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class CatalogViewModel : ViewModel() {
+internal class CatalogViewModel : ViewModel() {
     val catalogContent: LiveData<List<CatalogItem>>
         get() = mutableCatalogContent
     private val mutableCatalogContent: MutableLiveData<List<CatalogItem>> by lazy {

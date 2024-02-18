@@ -206,12 +206,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
+                android:layout_marginVertical="@dimen/item_vertical_margin"
                 android:text="@string/description"/>
 
             <LinearLayout
+                android:id="@+id/llProductorButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
+                android:layout_marginVertical="@dimen/item_vertical_margin"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:background="@drawable/producer_bg">
@@ -243,31 +247,33 @@
 
                 android:text="@string/description"/>
 
-            <TextView
-                android:id="@+id/tvHide"
-                android:layout_width="match_parent"
+            <ToggleButton
+                android:id="@+id/tbHideDescription"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:clickable="true"
-                style="@style/ContentTextStyle"
-                android:textColor="@color/grey"
-
-                android:text="@string/hide"/>
+                style="@style/HideToggleButtonStyle"
+                android:checked="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:layout_marginVertical="@dimen/item_vertical_margin"
                 android:text="@string/characteristics"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvCharacteristicsList"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"/>
+                android:layout_height="0dp"
+
+                android:layout_marginVertical="@dimen/item_vertical_margin" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+
+                android:layout_marginVertical="@dimen/item_vertical_margin">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -296,16 +302,12 @@
                 android:maxLines="2"
                 android:ellipsize="end"/>
 
-            <TextView
-                android:id="@+id/tvHideIngredients"
+            <ToggleButton
+                android:id="@+id/tbHideIngredients"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                style="@style/ContentTextStyle"
-                android:textColor="@color/grey"
-
-                android:clickable="true"
-                android:text="@string/show"/>
+                style="@style/HideToggleButtonStyle"/>
 
             <LinearLayout
                 android:id="@+id/llBuyButton"

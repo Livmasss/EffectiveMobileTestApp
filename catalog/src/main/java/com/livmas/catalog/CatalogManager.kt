@@ -1,12 +1,10 @@
 package com.livmas.catalog
 
-import android.graphics.drawable.Drawable
 import com.livmas.catalog.models.CatalogItem
 import com.livmas.catalog.models.SortingMode
 import com.livmas.utils.models.ItemTag
 
 internal class CatalogManager {
-
     private var initialData: List<CatalogItem>? = null
     private var filteredData: List<CatalogItem>? = initialData
 

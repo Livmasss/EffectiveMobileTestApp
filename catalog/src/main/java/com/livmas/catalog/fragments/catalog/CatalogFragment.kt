@@ -95,7 +95,7 @@ class CatalogFragment : SendingFragment() {
 
             binding.rvCatalog.adapter = navController?.let { controller ->
                 CatalogRecyclerAdapter(
-                    resources, it, controller
+                    resources, it, controller, requireActivity()
                 )
             }
 

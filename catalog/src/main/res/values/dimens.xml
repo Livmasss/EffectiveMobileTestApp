@@ -9,5 +9,6 @@
     <dimen name="ProgressBarSize">50dp</dimen>
     <dimen name="item_padding">5dp</dimen>
     <dimen name="item_feedback_margin">5dp</dimen>
-    <dimen name="item_vertical_margin">3dp</dimen>
+    <dimen name="item_vertical_margin">5dp</dimen>
+    <dimen name="item_vertical_margin_short">2dp</dimen>
 </resources>

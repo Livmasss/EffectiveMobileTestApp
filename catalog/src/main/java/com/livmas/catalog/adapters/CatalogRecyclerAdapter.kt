@@ -1,5 +1,6 @@
 package com.livmas.catalog.adapters
 
+import android.app.Activity
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.util.Log
@@ -23,6 +24,7 @@ internal class CatalogRecyclerAdapter(
     private val resources: Resources,
     private val data: List<CatalogItem>,
     private val navController: NavController,
+    private val activity: Activity
 ): RecyclerView.Adapter<CatalogRecyclerAdapter.ItemHolder>() {
 
     inner class ItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -54,15 +56,9 @@ internal class CatalogRecyclerAdapter(
         fun setupItemListener(item: CatalogItem) {
             binding.root.setOnClickListener {
                 Log.d(CATALOG_TAG, "Item clicked")
-                CoroutineScope(Dispatchers.IO).launch {
-                    ItemKeeper.openedItem =
-                        CatalogRepository.instance.getItemById(item.id)?.let { response ->
-                            ItemModel(
-                                response,
-                                item.images
-                            )
-                        }
-                }
+
+                ItemKeeper.openedItemImages = item.images
+                ItemKeeper.openedItemId = item.id
                 navController.navigate(R.id.action_catalog_navigation_main_to_catalog_navigation_item)
             }
         }
