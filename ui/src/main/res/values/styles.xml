@@ -10,4 +10,11 @@
         <item name="android:textSize">20sp</item>
         <item name="fontFamily">@font/sf_pro_display</item>
     </style>
+    
+    <style name="LinearLayoutButtonStyle">
+
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/linear_button_bg</item>
+    </style>
 </resources>

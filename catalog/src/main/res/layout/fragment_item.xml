@@ -217,9 +217,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginVertical="@dimen/item_vertical_margin"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:background="@drawable/producer_bg">
+                style="@style/LinearLayoutButtonStyle">
                 <TextView
                     android:id="@+id/tvBrandTitle"
                     android:layout_width="wrap_content"
@@ -233,7 +231,7 @@
                     android:layout_weight="1"/>
 
                 <View
-                    android:id="@+id/vector_1_st"
+                    android:id="@+id/ivGoto"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="@drawable/ic_arrow_goto" />
@@ -321,7 +319,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                style="@style/LinearLayoutButton">
+                style="@style/BottomBuyButtonStyle">
 
 
                 <TextView

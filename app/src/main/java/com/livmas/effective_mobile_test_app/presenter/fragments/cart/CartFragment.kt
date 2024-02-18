@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.livmas.effective_mobile_test_app.R
 import com.livmas.effective_mobile_test_app.databinding.FragmentCartBinding
 import com.livmas.ui.SendingFragment
 
@@ -25,6 +24,6 @@ class CartFragment : SendingFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        title = resources.getString(R.string.title_cart_page)
+        title = resources.getString(com.livmas.ui.R.string.title_cart_page)
     }
 }

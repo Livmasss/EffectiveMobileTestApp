@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph_profile"
+    app:startDestination="@id/navigation_profile_main">
+
+    <fragment
+        android:id="@+id/navigation_profile_liked"
+        android:name="com.livmas.profile.fragments.liked.LikedFragment"
+        android:label="fragment_liked"
+        tools:layout="@layout/fragment_liked" />
+    <fragment
+        android:id="@+id/navigation_profile_main"
+        android:name="com.livmas.profile.fragments.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_navigation_profile_main_to_navigation_profile_liked2"
+            app:destination="@id/navigation_profile_liked" />
+    </fragment>
+</navigation>

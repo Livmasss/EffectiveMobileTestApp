@@ -67,8 +67,7 @@
         <item name="android:layout_marginHorizontal">5dp</item>
     </style>
 
-    <style name="LinearLayoutButton">
-
+    <style name="BottomBuyButtonStyle">
         <item name="android:gravity">center_vertical</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:clickable">true</item>

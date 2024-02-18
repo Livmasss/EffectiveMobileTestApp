@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.livmas.effective_mobile_test_app.R
 import com.livmas.effective_mobile_test_app.databinding.FragmentHomeBinding
 import com.livmas.ui.SendingFragment
 
@@ -23,6 +22,6 @@ class HomeFragment : SendingFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        title = resources.getString(R.string.title_home_page)
+        title = resources.getString(com.livmas.ui.R.string.title_home_page)
     }
 }

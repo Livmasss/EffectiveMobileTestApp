@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/catalog" />
             <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/profile" />
             <option value="$PROJECT_DIR$/ui" />
             <option value="$PROJECT_DIR$/utils" />
           </set>

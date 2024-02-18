@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Pages -->
+    <string name="title_home_page">Главная</string>
+    <string name="title_catalog_page">Каталог</string>
+    <string name="title_cart_page">Корзина</string>
+    <string name="title_sales_page">Акции</string>
+    <string name="title_profile_page">Профиль</string>
+
+</resources>
