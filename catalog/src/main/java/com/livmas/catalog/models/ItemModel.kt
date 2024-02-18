@@ -1,7 +1,7 @@
 package com.livmas.catalog.models
 
 import android.graphics.drawable.Drawable
-import com.livmas.data.models.ItemCharacteristics
+import com.livmas.data.models.CharacteristicModel
 import com.livmas.data.models.ResponseCatalogItem
 
 internal data class ItemModel (
@@ -20,7 +20,7 @@ internal data class ItemModel (
 
     val available: Int,
     val description: String,
-    val info: List<ItemCharacteristics>,
+    val info: List<CharacteristicModel>,
     val ingredients: String
 ) {
     constructor(response: ResponseCatalogItem, images: List<Drawable>) : this(

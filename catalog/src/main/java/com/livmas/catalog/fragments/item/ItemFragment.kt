@@ -4,20 +4,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.livmas.catalog.R
+import com.livmas.catalog.adapters.CharacteristicsAdapter
 import com.livmas.catalog.adapters.PhotoPagerAdapter
 import com.livmas.catalog.databinding.FragmentItemBinding
 import com.livmas.catalog.fragments.item.ItemKeeper.Companion.openedItemId
 import com.livmas.catalog.models.ItemModel
+import com.livmas.data.models.CharacteristicModel
 import com.livmas.data.repositories.CatalogRepository
+import com.livmas.ui.HostActivity
+import com.livmas.ui.SendingFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class ItemFragment : Fragment() {
-
+class ItemFragment : SendingFragment() {
     private val viewModel: ItemViewModel by viewModels()
     private lateinit var binding: FragmentItemBinding
 
@@ -32,9 +36,8 @@ class ItemFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupItemObserver()
-        setupDescriptionShownObserver()
-        setupIngredientsShownObserver()
+        setupObservers()
+        setupListeners()
 
         initiateValues()
     }
@@ -54,6 +57,12 @@ class ItemFragment : Fragment() {
                 }
             )
         }
+
+    private fun setupObservers() {
+        setupItemObserver()
+        setupDescriptionShownObserver()
+        setupIngredientsShownObserver()
+    }
 
     private fun setupItemObserver() {
         viewModel.mutableModel.observe(viewLifecycleOwner) {
@@ -78,37 +87,43 @@ class ItemFragment : Fragment() {
                     tvBrandTitle.text = title
                     tvDescription.text = description
 
+                    initCharacteristics(info)
                     tvIngredients.text = ingredients
 
                     tvPriceBottom.text = getPriceText(price, unit)
                     tvOldPriceBottom.text = getPriceText(oldPrice, unit)
-
-                    tbHideDescription.setOnCheckedChangeListener { _, b ->
-                        viewModel.descriptionShown.postValue(b)
-                    }
-
-                    tbHideIngredients.setOnCheckedChangeListener { _, b ->
-                        viewModel.ingredientsShown.postValue(b)
-                    }
                 }
             }
         }
     }
 
-        private fun setupDescriptionShownObserver() {
-            viewModel.descriptionShown.observe(viewLifecycleOwner) {
-                binding.apply {
-                    if (it) {
-                        tvDescription.visibility = View.VISIBLE
-                        llProductorButton.visibility = View.VISIBLE
-                    }
-                    else {
-                        tvDescription.visibility = View.GONE
-                        llProductorButton.visibility = View.GONE
-                    }
+    private fun initCharacteristics(info: List<CharacteristicModel>) {
+        val manager = LinearLayoutManager(context)
+        manager.orientation = LinearLayoutManager.VERTICAL
+
+        binding.rvCharacteristicsList.apply {
+            layoutManager = manager
+            adapter = CharacteristicsAdapter(info)
+            addItemDecoration(DividerItemDecoration(
+                requireContext(), manager.orientation
+            ))
+        }
+    }
+
+    private fun setupDescriptionShownObserver() {
+        viewModel.descriptionShown.observe(viewLifecycleOwner) {
+            binding.apply {
+                if (it) {
+                    tvDescription.visibility = View.VISIBLE
+                    llProductorButton.visibility = View.VISIBLE
+                }
+                else {
+                    tvDescription.visibility = View.GONE
+                    llProductorButton.visibility = View.GONE
                 }
             }
         }
+    }
 
     private fun setupIngredientsShownObserver() {
         viewModel.ingredientsShown.observe(viewLifecycleOwner) {
@@ -117,6 +132,28 @@ class ItemFragment : Fragment() {
                 Integer.MAX_VALUE
             else
                 resources.getInteger(R.integer.ingredients_lines_limit)
+        }
+    }
+
+    private fun setupListeners() {
+        setupBackButtonListener()
+        setupHideShowListeners()
+    }
+
+    private fun setupHideShowListeners() = binding.apply {
+        tbHideDescription.setOnCheckedChangeListener { _, b ->
+            viewModel.descriptionShown.postValue(b)
+        }
+
+        tbHideIngredients.setOnCheckedChangeListener { _, b ->
+            viewModel.ingredientsShown.postValue(b)
+        }
+    }
+
+    private fun setupBackButtonListener() {
+        binding.ibBack.setOnClickListener {
+            val activity = requireActivity() as HostActivity
+            activity.navController.navigateUp()
         }
     }
 

@@ -13,6 +13,7 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/ibBack"
             style="@style/ImageButtonStyle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -37,14 +38,14 @@
             style="@style/ImageButtonStyle"/>
     </LinearLayout>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -262,12 +263,18 @@
                 android:layout_marginVertical="@dimen/item_vertical_margin"
                 android:text="@string/characteristics"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvCharacteristicsList"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                android:layout_marginVertical="@dimen/item_vertical_margin" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCharacteristicsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginVertical="@dimen/item_vertical_margin" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -353,6 +360,6 @@
 
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

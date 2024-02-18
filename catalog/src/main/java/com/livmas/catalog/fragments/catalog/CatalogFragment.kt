@@ -95,11 +95,15 @@ class CatalogFragment : SendingFragment() {
 
             binding.rvCatalog.adapter = navController?.let { controller ->
                 CatalogRecyclerAdapter(
-                    resources, it, controller, requireActivity()
+                    resources, it, controller
+                )
+            }
+            binding.rvCatalog.adapter?.itemCount?.let { count ->
+                binding.rvCatalog.adapter?.notifyItemRangeInserted(0,
+                    count
                 )
             }
 
-            binding.rvCatalog.adapter?.notifyDataSetChanged()
             Log.i(CATALOG_TAG, "Catalog size: ${it.size}")
             binding.pbLoading.visibility = View.GONE
         }

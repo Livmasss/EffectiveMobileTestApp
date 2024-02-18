@@ -1,6 +1,6 @@
 package com.livmas.data.models
 
-data class ItemCharacteristics(
+data class CharacteristicModel(
     val title: String,
     val value: String
 )

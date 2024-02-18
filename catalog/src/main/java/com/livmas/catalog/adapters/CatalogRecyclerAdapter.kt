@@ -1,6 +1,5 @@
 package com.livmas.catalog.adapters
 
-import android.app.Activity
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.util.Log
@@ -13,18 +12,12 @@ import com.livmas.catalog.R
 import com.livmas.catalog.databinding.ItemLayoutBinding
 import com.livmas.catalog.fragments.item.ItemKeeper
 import com.livmas.catalog.models.CatalogItem
-import com.livmas.catalog.models.ItemModel
-import com.livmas.data.repositories.CatalogRepository
 import com.livmas.utils.CATALOG_TAG
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 internal class CatalogRecyclerAdapter(
     private val resources: Resources,
     private val data: List<CatalogItem>,
-    private val navController: NavController,
-    private val activity: Activity
+    private val navController: NavController
 ): RecyclerView.Adapter<CatalogRecyclerAdapter.ItemHolder>() {
 
     inner class ItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

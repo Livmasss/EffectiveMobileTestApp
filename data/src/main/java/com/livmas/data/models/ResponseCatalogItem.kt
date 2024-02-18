@@ -9,7 +9,7 @@ data class ResponseCatalogItem (
     val tags: List<String>,
     val available: Int,
     val description: String,
-    val info: List<ItemCharacteristics>,
+    val info: List<CharacteristicModel>,
     val ingredients: String
     ) {
 
