@@ -7,8 +7,8 @@
 
     android:background="@drawable/catalog_item_bg"
     android:layout_margin="10dp"
-    android:paddingStart="@dimen/item_padding"
-    android:paddingTop="@dimen/item_padding">
+    android:paddingStart="@dimen/preview_item_padding"
+    android:paddingTop="@dimen/preview_item_padding">
 
     <include
         android:id="@+id/includePager"
@@ -19,7 +19,7 @@
     <ToggleButton
         android:id="@+id/ibLike"
 
-        style="@style/toggleButton"
+        style="@style/LikeToggleButton"
         android:layout_width="@dimen/preview_like_button_size"
 
         android:layout_height="@dimen/preview_like_button_size"
@@ -31,7 +31,7 @@
 
     <TextView
         android:id="@+id/tvOldCost"
-        style="@style/OldPriceStyle"
+        android:textColor="@color/grey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="000 ₽"

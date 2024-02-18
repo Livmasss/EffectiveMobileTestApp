@@ -7,4 +7,6 @@
     <string name="feedback_button">Обратная связь</string>
     <string name="offer_button">Оферта</string>
     <string name="return_button">Возврат товара</string>
+    <string name="products">Товары</string>
+    <string name="brands">Бренды</string>
 </resources>

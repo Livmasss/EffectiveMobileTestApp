@@ -28,10 +28,11 @@ class ProfileFragment : SendingFragment() {
         super.onViewCreated(view, savedInstanceState)
         title = resources.getString(com.livmas.ui.R.string.title_profile_page)
 
-        setupButtons()
+        setupButtonsStates()
+        setupListeners()
     }
 
-    private fun setupButtons() {
+    private fun setupButtonsStates() {
         binding.apply {
             setTitleAndSubtitle(binding.lblProfile, com.livmas.ui.R.drawable.ic_profile_page,"Имя Фамилия", "+7 000 000 00 00")
             setTitleAndSubtitle(binding.lblLiked,
@@ -57,5 +58,13 @@ class ProfileFragment : SendingFragment() {
     private fun setTitleWithoutSubtitle(lbl: LinearButtonLayoutBinding, iconId: Int, title: String) {
         setTitle(lbl, iconId, title)
         lbl.tvLblSubtitle.visibility = View.GONE
+    }
+    private fun setupListeners() {
+        setupLikedListener()
+    }
+    private fun setupLikedListener() {
+        binding.lblLiked.root.setOnClickListener {
+            navController?.navigate(R.id.action_navigation_profile_main_to_navigation_profile_liked2)
+        }
     }
 }
