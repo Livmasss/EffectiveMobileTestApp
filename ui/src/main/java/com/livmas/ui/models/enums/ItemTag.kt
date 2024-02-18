@@ -1,4 +1,4 @@
-package com.livmas.utils.models
+package com.livmas.ui.models.enums
 
 enum class ItemTag {
     Face,

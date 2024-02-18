@@ -1,4 +1,4 @@
-package com.livmas.catalog.models
+package com.livmas.ui.models
 
 import android.graphics.drawable.Drawable
 import com.livmas.ui.models.enums.ItemTag

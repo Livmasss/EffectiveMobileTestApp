@@ -1,10 +1,10 @@
-package com.livmas.catalog.models
+package com.livmas.ui.models
 
 import android.graphics.drawable.Drawable
 import com.livmas.data.models.CharacteristicModel
 import com.livmas.data.models.ResponseCatalogItem
 
-internal data class ItemModel (
+data class ItemModel (
     val images: List<Drawable>,
 
     val title: String,

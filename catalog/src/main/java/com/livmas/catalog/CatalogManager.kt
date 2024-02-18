@@ -1,8 +1,8 @@
 package com.livmas.catalog
 
-import com.livmas.catalog.models.CatalogItem
+import com.livmas.ui.models.CatalogItem
 import com.livmas.catalog.models.SortingMode
-import com.livmas.utils.models.ItemTag
+import com.livmas.ui.models.enums.ItemTag
 
 internal class CatalogManager {
     private var initialData: List<CatalogItem>? = null

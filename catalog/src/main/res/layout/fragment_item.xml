@@ -54,7 +54,7 @@
                 <ToggleButton
                     android:id="@+id/ibLike"
 
-                    style="@style/toggleButton"
+                    style="@style/LikeToggleButton"
                     android:layout_width="@dimen/preview_like_button_size"
                     android:layout_height="@dimen/preview_like_button_size"
 

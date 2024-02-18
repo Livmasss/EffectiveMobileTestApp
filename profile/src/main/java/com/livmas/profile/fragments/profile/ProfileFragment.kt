@@ -4,13 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.viewModels
 import com.livmas.effective_mobile_test_app.presenter.fragments.profile.ProfileViewModel
 import com.livmas.profile.R
 import com.livmas.profile.databinding.FragmentProfileBinding
 import com.livmas.ui.SendingFragment
+import com.livmas.ui.databinding.LinearButtonLayoutBinding
 
 class ProfileFragment : SendingFragment() {
 
@@ -47,16 +46,16 @@ class ProfileFragment : SendingFragment() {
         }
     }
 
-    private fun setTitle(lbl: View, iconId: Int, text: String) {
-        lbl.findViewById<TextView>(com.livmas.ui.R.id.tvLblTitle).text = text
-        lbl.findViewById<ImageView>(com.livmas.ui.R.id.ivLblIcon).setImageResource(iconId)
+    private fun setTitle(lbl: LinearButtonLayoutBinding, iconId: Int, text: String) {
+        lbl.tvLblTitle.text = text
+        lbl.ivLblIcon.setImageResource(iconId)
     }
-    private fun setTitleAndSubtitle(lbl: View, iconId: Int, title: String, sTitle: String) {
+    private fun setTitleAndSubtitle(lbl: LinearButtonLayoutBinding, iconId: Int, title: String, sTitle: String) {
         setTitle(lbl, iconId, title)
-        lbl.findViewById<TextView>(com.livmas.ui.R.id.tvLblSubtitle).text = sTitle
+        lbl.tvLblSubtitle.text = sTitle
     }
-    private fun setTitleWithoutSubtitle(lbl: View, iconId: Int, title: String) {
+    private fun setTitleWithoutSubtitle(lbl: LinearButtonLayoutBinding, iconId: Int, title: String) {
         setTitle(lbl, iconId, title)
-        lbl.findViewById<TextView>(com.livmas.ui.R.id.tvLblSubtitle).visibility = View.GONE
+        lbl.tvLblSubtitle.visibility = View.GONE
     }
 }

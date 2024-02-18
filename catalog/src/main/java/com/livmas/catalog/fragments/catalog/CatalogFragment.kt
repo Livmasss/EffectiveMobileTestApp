@@ -21,7 +21,7 @@ import com.livmas.catalog.databinding.FragmentCatalogBinding
 import com.livmas.catalog.models.SortingMode
 import com.livmas.ui.SendingFragment
 import com.livmas.utils.CATALOG_TAG
-import com.livmas.utils.models.ItemTag
+import com.livmas.ui.models.enums.ItemTag
 
 class CatalogFragment : SendingFragment() {
 
@@ -113,12 +113,12 @@ class CatalogFragment : SendingFragment() {
         val images = ArrayList<Drawable>()
 
         images.apply {
-            addDrawable(getDrawableById(R.drawable.catalog_image_0))
-            addDrawable(getDrawableById(R.drawable.catalog_image_1))
-            addDrawable(getDrawableById(R.drawable.catalog_image_2))
-            addDrawable(getDrawableById(R.drawable.catalog_image_3))
-            addDrawable(getDrawableById(R.drawable.catalog_image_4))
-            addDrawable(getDrawableById(R.drawable.catalog_image_5))
+            addDrawable(getDrawableById(com.livmas.ui.R.drawable.catalog_image_0))
+            addDrawable(getDrawableById(com.livmas.ui.R.drawable.catalog_image_1))
+            addDrawable(getDrawableById(com.livmas.ui.R.drawable.catalog_image_2))
+            addDrawable(getDrawableById(com.livmas.ui.R.drawable.catalog_image_3))
+            addDrawable(getDrawableById(com.livmas.ui.R.drawable.catalog_image_4))
+            addDrawable(getDrawableById(com.livmas.ui.R.drawable.catalog_image_5))
         }
 
         viewModel.fillAdapterWithData(images)

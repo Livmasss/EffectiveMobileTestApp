@@ -5,10 +5,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.livmas.catalog.CatalogManager
-import com.livmas.catalog.models.CatalogItem
+import com.livmas.ui.models.CatalogItem
 import com.livmas.catalog.models.SortingMode
 import com.livmas.data.repositories.CatalogRepository
-import com.livmas.utils.models.ItemTag
+import com.livmas.ui.models.enums.ItemTag
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

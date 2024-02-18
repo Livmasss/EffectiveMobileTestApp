@@ -9,14 +9,15 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.livmas.catalog.R
 import com.livmas.catalog.adapters.CharacteristicsAdapter
-import com.livmas.catalog.adapters.PhotoPagerAdapter
 import com.livmas.catalog.databinding.FragmentItemBinding
-import com.livmas.catalog.fragments.item.ItemKeeper.Companion.openedItemId
-import com.livmas.catalog.models.ItemModel
+import com.livmas.ui.ItemKeeper.Companion.openedItemId
+import com.livmas.ui.models.ItemModel
 import com.livmas.data.models.CharacteristicModel
 import com.livmas.data.repositories.CatalogRepository
 import com.livmas.ui.HostActivity
+import com.livmas.ui.ItemKeeper
 import com.livmas.ui.SendingFragment
+import com.livmas.ui.adapters.PhotoPagerAdapter
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -88,11 +89,11 @@ class ItemFragment : SendingFragment() {
 
                     tvRating.text = rating.toString()
                     rbRating.rating = rating
-                    tvReviewsCount.text = defineReviewsString(available)
+                    tvReviewsCount.text = defineReviewsString(reviewsCount)
 
                     tvPrice.text = getPriceText(price, unit)
                     tvOldPrice.text = getPriceText(oldPrice, unit)
-                    tvDiscount.text = resources.getString(R.string.discount_pattern, discount)
+                    tvDiscount.text = resources.getString(com.livmas.ui.R.string.discount_pattern, discount)
 
                     tvBrandTitle.text = title
                     tvDescription.text = description
@@ -174,5 +175,5 @@ class ItemFragment : SendingFragment() {
     }
 
     private fun getPriceText(price: Int, unit: Char) =
-        resources.getString(R.string.price_pattern, price, unit)
+        resources.getString(com.livmas.ui.R.string.price_pattern, price, unit)
 }

@@ -2,7 +2,7 @@ package com.livmas.catalog.fragments.item
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.livmas.catalog.models.ItemModel
+import com.livmas.ui.models.ItemModel
 
 internal class ItemViewModel: ViewModel() {
     val mutableModel: MutableLiveData<ItemModel> by lazy {

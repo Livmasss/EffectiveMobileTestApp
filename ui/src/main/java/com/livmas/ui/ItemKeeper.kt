@@ -1,11 +1,9 @@
-package com.livmas.catalog.fragments.item
+package com.livmas.ui
 
 import android.graphics.drawable.Drawable
-import com.livmas.catalog.models.ItemModel
 
-internal class ItemKeeper {
+class ItemKeeper {
     companion object {
-        var openedItem: ItemModel? = null
         var openedItemId: String? = null
         var openedItemImages: List<Drawable>? = null
     }

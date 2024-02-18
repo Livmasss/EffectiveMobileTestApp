@@ -1,14 +1,14 @@
-package com.livmas.catalog.adapters
+package com.livmas.ui.adapters
 
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.livmas.catalog.R
-import com.livmas.catalog.databinding.ItemPhotoLayoutBinding
+import com.livmas.ui.R
+import com.livmas.ui.databinding.ItemPhotoLayoutBinding
 
-internal class PhotoPagerAdapter(private val photosRes: List<Drawable>): RecyclerView.Adapter<PhotoPagerAdapter.PhotoViewHolder>() {
+class PhotoPagerAdapter(private val photosRes: List<Drawable>): RecyclerView.Adapter<PhotoPagerAdapter.PhotoViewHolder>() {
     inner class PhotoViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val binding = ItemPhotoLayoutBinding.bind(itemView)
     }
