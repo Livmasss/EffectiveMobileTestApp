@@ -42,6 +42,16 @@ class ItemFragment : SendingFragment() {
         initiateValues()
     }
 
+    override fun onStart() {
+        super.onStart()
+        hideActivityTitle()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        showActivityTitle()
+    }
+
     private fun initiateValues() =
         CoroutineScope(Dispatchers.IO).launch {
             viewModel.mutableModel.postValue(

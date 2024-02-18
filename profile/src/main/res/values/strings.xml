@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="exit">Выйти</string>
+    <string name="liked_button">Избранное</string>
+    <string name="liked_button_count">%1$d товар</string>
+    <string name="shops_button">Магазины</string>
+    <string name="feedback_button">Обратная связь</string>
+    <string name="offer_button">Оферта</string>
+    <string name="return_button">Возврат товара</string>
 </resources>

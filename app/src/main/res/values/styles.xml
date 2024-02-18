@@ -4,6 +4,7 @@
     <style name="TitleTextViewStyle" parent="MainTextViewStyle">
         <item name="android:textSize">32sp</item>
         <item name="fontFamily">@font/sf_pro_display</item>
+        <item name="android:layout_marginVertical">10dp</item>
     </style>
 
     <style name="LoginInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
@@ -13,11 +14,6 @@
 
         <item name="endIconMode">clear_text</item>
         <item name="endIconDrawable">@drawable/ic_close_big</item>
-    </style>
-
-    <style name="ButtonStyle">
-        <item name="textAllCaps">false</item>
-        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="TextViewLoyaltyPr" parent="MainTextViewStyle">

@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:text="@string/login"
 
-        style="@style/ButtonStyle"
+        style="@style/MainButtonStyle"
         android:backgroundTint="@color/light_pink"/>
 
     <Space

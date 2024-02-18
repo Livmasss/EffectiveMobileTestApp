@@ -6,6 +6,8 @@
     <string name="title_catalog_page">Каталог</string>
     <string name="title_cart_page">Корзина</string>
     <string name="title_sales_page">Акции</string>
-    <string name="title_profile_page">Профиль</string>
+    <string name="title_profile_page">Личный кабинет</string>
+    <string name="title">Название</string>
+    <string name="subtitle">Описание</string>
 
 </resources>

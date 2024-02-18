@@ -1,6 +1,7 @@
 package com.livmas.effective_mobile_test_app.presenter.activities
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavController
@@ -11,7 +12,12 @@ import com.livmas.effective_mobile_test_app.databinding.ActivityMainBinding
 import com.livmas.ui.HostActivity
 
 class MainActivity : AppCompatActivity(), HostActivity {
-    override val pageTitle: MutableLiveData<String> = MutableLiveData(null)
+    override val pageTitle: MutableLiveData<String> by lazy {
+        MutableLiveData(null)
+    }
+    override val showTitle: MutableLiveData<Boolean> by lazy {
+        MutableLiveData(true)
+    }
     override val navController: NavController
         get() = binding.navHost.findNavController()
 
@@ -22,7 +28,7 @@ class MainActivity : AppCompatActivity(), HostActivity {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        observeTitleUpdates()
+        observeHostUpdates()
     }
 
     override fun onStart() {
@@ -33,9 +39,15 @@ class MainActivity : AppCompatActivity(), HostActivity {
         )
     }
 
-    private fun observeTitleUpdates() {
+    private fun observeHostUpdates() {
         pageTitle.observe(this) {
             binding.tvTitle.text = it
+        }
+        showTitle.observe(this) {
+            binding.tvTitle.visibility = if (it)
+                View.VISIBLE
+            else
+                View.GONE
         }
     }
 }

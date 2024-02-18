@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/linear_button_layout"
+        android:id="@+id/lblProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="@dimen/margin_vertical" />
+
+    <include layout="@layout/linear_button_layout"
+        android:id="@+id/lblLiked"
+        android:layout_marginVertical="@dimen/margin_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <include layout="@layout/linear_button_layout"
+        android:id="@+id/lblShops"
+        android:layout_marginVertical="@dimen/margin_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <include layout="@layout/linear_button_layout"
+        android:id="@+id/lblFeedback"
+        android:layout_marginVertical="@dimen/margin_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <include layout="@layout/linear_button_layout"
+        android:id="@+id/lblOffer"
+        android:layout_marginVertical="@dimen/margin_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <include layout="@layout/linear_button_layout"
+        android:id="@+id/lblReturn"
+        android:layout_marginVertical="@dimen/margin_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        style="@style/MainButtonStyle"
+
+        android:theme="@style/GreyButtonTheme"
+        android:background="@drawable/linear_button_bg"
+        android:text="@string/exit"/>
+</LinearLayout>

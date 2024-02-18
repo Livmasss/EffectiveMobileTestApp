@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/llProductorButton"
+
+    android:id="@+id/llProducerButton"
 
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    style="@style/LinearLayoutButtonStyle"
-    android:padding="5dp">
+    style="@style/LinearLayoutButtonStyle">
 
     <ImageView
-        android:id="@+id/ivIcon"
+        android:id="@+id/ivLblIcon"
         android:layout_width="30dp"
         android:layout_height="30dp"/>
 
@@ -20,24 +20,25 @@
 
         android:layout_marginStart="10dp"
 
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvTitle"
+            android:id="@+id/tvLblTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="1230"/>
+            android:text="@string/title"/>
 
         <TextView
-            android:id="@+id/tvSubtitle"
+            android:id="@+id/tvLblSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
             android:textColor="@color/grey"
             android:textSize="11sp"
-            android:text="1230"/>
+
+            android:text="@string/subtitle"/>
     </LinearLayout>
 
     <Space
@@ -46,7 +47,7 @@
         android:layout_weight="1"/>
 
     <View
-        android:id="@+id/ivGoto"
+        android:id="@+id/ivLblGoto"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:background="@drawable/ic_arrow_goto" />

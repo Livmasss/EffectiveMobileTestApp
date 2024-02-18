@@ -12,9 +12,20 @@
     </style>
     
     <style name="LinearLayoutButtonStyle">
-
         <item name="android:gravity">center_vertical</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:background">@drawable/linear_button_bg</item>
+        <item name="android:paddingVertical">15dp</item>
+        <item name="android:paddingHorizontal">10dp</item>
+    </style>
+
+    <style name="MainButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="GreyButtonTheme" parent="Widget.AppCompat.Button">
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/light_grey</item>
     </style>
 </resources>
