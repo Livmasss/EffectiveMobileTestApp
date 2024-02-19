@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.livmas.catalog.CatalogManager
-import com.livmas.ui.models.CatalogItem
+import com.livmas.ui.models.PreviewItemModel
 import com.livmas.catalog.models.SortingMode
 import com.livmas.data.retrofit.repositories.CatalogRepository
 import com.livmas.ui.models.enums.ItemTag
@@ -14,9 +14,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 internal class CatalogViewModel : ViewModel() {
-    val catalogContent: LiveData<List<CatalogItem>>
+    val catalogContent: LiveData<List<PreviewItemModel>>
         get() = mutableCatalogContent
-    private val mutableCatalogContent: MutableLiveData<List<CatalogItem>> by lazy {
+    private val mutableCatalogContent: MutableLiveData<List<PreviewItemModel>> by lazy {
         MutableLiveData(null)
     }
     val sortingMode: SortingMode
@@ -109,9 +109,9 @@ internal class CatalogViewModel : ViewModel() {
         }
     }
 
-    private fun fetchData(images: ArrayList<Drawable>): List<CatalogItem> {
+    private fun fetchData(images: ArrayList<Drawable>): List<PreviewItemModel> {
         return catalogRepository.getAllItems()?.map {
-            CatalogItem(
+            PreviewItemModel(
                 it.id,
                 chooseImages(it.id, images),
                 it.price.priceWithDiscount.toInt(),

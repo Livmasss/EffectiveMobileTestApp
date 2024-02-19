@@ -1,4 +1,4 @@
-package com.livmas.domain.usecases
+package com.livmas.domain.usecases.user
 
 import com.livmas.domain.iRepositories.UserRepository
 import org.koin.java.KoinJavaComponent.inject

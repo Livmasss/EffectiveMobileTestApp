@@ -4,11 +4,11 @@ import android.content.res.Resources
 import androidx.navigation.NavController
 import com.livmas.catalog.R
 import com.livmas.ui.adapters.ACatalogRecyclerAdapter
-import com.livmas.ui.models.CatalogItem
+import com.livmas.ui.models.PreviewItemModel
 
 class CatalogRecyclerAdapter(
     resources: Resources,
-    data: List<CatalogItem>,
+    data: List<PreviewItemModel>,
     navController: NavController):
     ACatalogRecyclerAdapter(resources, data, navController)
 {

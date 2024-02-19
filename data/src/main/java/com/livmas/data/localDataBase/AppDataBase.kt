@@ -7,7 +7,8 @@ import com.livmas.data.localDataBase.daos.UserDao
 import com.livmas.data.localDataBase.entities.LikedEntity
 import com.livmas.data.localDataBase.entities.UserEntity
 
-@Database(entities = [UserEntity::class, LikedEntity::class], version = 1)
+@Database(entities = [UserEntity::class, LikedEntity::class],
+    version = 2)
 abstract class AppDataBase: RoomDatabase() {
     abstract fun getUserDao(): UserDao
     abstract fun getLikedDao(): LikedDao

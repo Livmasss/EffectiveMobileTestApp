@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.livmas.domain.models.UserModel
-import com.livmas.domain.usecases.LoginUseCase
-import com.livmas.domain.usecases.TryReloginUseCase
+import com.livmas.domain.usecases.user.LoginUseCase
+import com.livmas.domain.usecases.user.TryReloginUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

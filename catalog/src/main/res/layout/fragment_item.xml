@@ -52,7 +52,7 @@
                 android:layout_height="300dp">
 
                 <ToggleButton
-                    android:id="@+id/ibLike"
+                    android:id="@+id/tbLike"
 
                     style="@style/LikeToggleButton"
                     android:layout_width="@dimen/preview_like_button_size"

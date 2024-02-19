@@ -1,13 +1,12 @@
 package com.livmas.profile.fragments.profile
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.livmas.domain.AuthedUserHolder
-import com.livmas.domain.usecases.LogoutUseCase
+import com.livmas.domain.usecases.user.LogoutUseCase
 import com.livmas.profile.R
 import com.livmas.profile.databinding.FragmentProfileBinding
 import com.livmas.ui.SendingFragment

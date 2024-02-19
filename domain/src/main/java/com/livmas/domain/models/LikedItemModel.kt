@@ -1,9 +1,8 @@
-package com.livmas.ui.models
+package com.livmas.domain.models
 
 import android.graphics.drawable.Drawable
-import com.livmas.ui.models.enums.ItemTag
 
-data class CatalogItem (
+data class LikedItemModel (
     val id: String,
     val images: List<Drawable>,
 
@@ -14,8 +13,6 @@ data class CatalogItem (
 
     val title: String,
     val subtitle: String,
-
-    val tags: List<ItemTag>,
 
     val rating: Float,
     val reviewsCount: Int,
