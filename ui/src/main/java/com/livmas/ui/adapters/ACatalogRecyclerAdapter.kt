@@ -13,6 +13,7 @@ import com.livmas.domain.usecases.liked.UnlikeItemUseCase
 import com.livmas.ui.ItemKeeper
 import com.livmas.ui.models.PreviewItemModel
 import com.livmas.ui.R
+import com.livmas.ui.createLikedModel
 import com.livmas.ui.databinding.ItemLayoutBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -95,8 +96,4 @@ abstract class ACatalogRecyclerAdapter(
     protected abstract fun navigate()
 
     override fun getItemCount(): Int = data.size
-
-    private fun PreviewItemModel.createLikedModel(): LikedItemModel = this.run {
-        LikedItemModel(id, images, price, oldPrice, unit, discount, title, subtitle, rating, reviewsCount, isLiked)
-    }
 }

@@ -13,7 +13,7 @@ import com.livmas.catalog.databinding.FragmentItemBinding
 import com.livmas.ui.ItemKeeper.Companion.openedItemId
 import com.livmas.ui.models.ItemModel
 import com.livmas.data.retrofit.models.CharacteristicModel
-import com.livmas.data.retrofit.repositories.CatalogRepository
+import com.livmas.data.retrofit.repositories.CatalogRepositoryImpl
 import com.livmas.ui.HostActivity
 import com.livmas.ui.ItemKeeper
 import com.livmas.ui.SendingFragment
@@ -58,7 +58,7 @@ class ItemFragment : SendingFragment() {
         CoroutineScope(Dispatchers.IO).launch {
             viewModel.mutableModel.postValue(
                 openedItemId?.let {
-                    CatalogRepository.instance.getItemById(it)?.let { response ->
+                    CatalogRepositoryImpl.instance.getItemById(it)?.let { response ->
                         ItemKeeper.openedItemImages?.let { images ->
                             ItemModel(
                                 response,

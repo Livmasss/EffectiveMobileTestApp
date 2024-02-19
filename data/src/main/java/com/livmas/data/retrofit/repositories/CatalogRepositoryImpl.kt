@@ -3,10 +3,10 @@ package com.livmas.data.retrofit.repositories
 import com.livmas.data.retrofit.models.ResponseCatalogItem
 import com.livmas.data.retrofit.sources.RemoteCatalogDataSource
 
-class CatalogRepository {
+class CatalogRepositoryImpl {
     companion object {
-        private val privateInstance: CatalogRepository by lazy {
-            CatalogRepository()
+        private val privateInstance: CatalogRepositoryImpl by lazy {
+            CatalogRepositoryImpl()
         }
         val instance = privateInstance
     }

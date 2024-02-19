@@ -6,7 +6,7 @@ import com.livmas.data.localDataBase.daos.LikedDao
 import com.livmas.data.localDataBase.daos.UserDao
 import com.livmas.data.localDataBase.repositories.LikedRepositoryImpl
 import com.livmas.data.localDataBase.repositories.UserRepositoryImpl
-import com.livmas.data.retrofit.repositories.CatalogRepository
+import com.livmas.data.retrofit.repositories.CatalogRepositoryImpl
 import com.livmas.domain.iRepositories.LikedRepository
 import com.livmas.domain.iRepositories.UserRepository
 import org.koin.android.ext.koin.androidApplication
@@ -40,6 +40,6 @@ val dataModule = module {
 
     single<LikedRepository> {
         val dao = get<LikedDao>()
-        LikedRepositoryImpl(dao, CatalogRepository())
+        LikedRepositoryImpl(dao, CatalogRepositoryImpl())
     }
 }

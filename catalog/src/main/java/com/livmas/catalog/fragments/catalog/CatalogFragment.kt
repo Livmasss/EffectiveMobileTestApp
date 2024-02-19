@@ -1,6 +1,5 @@
 package com.livmas.catalog.fragments.catalog
 
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
-import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.children
 import androidx.core.view.get
 import androidx.fragment.app.viewModels
@@ -19,6 +17,7 @@ import com.livmas.catalog.adapters.CatalogRecyclerAdapter
 import com.livmas.catalog.databinding.FragmentCatalogBinding
 import com.livmas.catalog.models.SortingMode
 import com.livmas.ui.SendingFragment
+import com.livmas.ui.getItemsImages
 import com.livmas.ui.models.enums.ItemTag
 
 class CatalogFragment : SendingFragment() {
@@ -107,29 +106,13 @@ class CatalogFragment : SendingFragment() {
     }
 
     private fun setupAdapterData() {
-        val images = ArrayList<Drawable>()
-
-        images.apply {
-            addDrawable(getDrawableById(com.livmas.ui.R.drawable.catalog_image_0))
-            addDrawable(getDrawableById(com.livmas.ui.R.drawable.catalog_image_1))
-            addDrawable(getDrawableById(com.livmas.ui.R.drawable.catalog_image_2))
-            addDrawable(getDrawableById(com.livmas.ui.R.drawable.catalog_image_3))
-            addDrawable(getDrawableById(com.livmas.ui.R.drawable.catalog_image_4))
-            addDrawable(getDrawableById(com.livmas.ui.R.drawable.catalog_image_5))
-        }
-
-        viewModel.fillAdapterWithData(images)
+        viewModel.fillAdapterWithData(getItemsImages(resources, requireActivity().theme))
         startProgressBar()
     }
 
     private fun startProgressBar() {
         binding.pbLoading.visibility = View.VISIBLE
     }
-
-    private fun getDrawableById(resId: Int) =
-        ResourcesCompat.getDrawable(resources, resId, requireActivity().theme)
-    private fun ArrayList<Drawable>.addDrawable(drawable: Drawable?) = drawable?.let { add(it) }
-
     private fun setupSpinnerListener() {
         binding.apply {
             sSorting.onItemSelectedListener = object: OnItemSelectedListener {

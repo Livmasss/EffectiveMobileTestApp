@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import com.livmas.profile.databinding.FragmentLikedBinding
 import com.livmas.ui.HostActivity
 import com.livmas.ui.SendingFragment
+import com.livmas.ui.getItemsImages
 
 internal class LikedFragment : SendingFragment() {
     private val viewModel: LikedViewModel by viewModels()
@@ -25,6 +26,7 @@ internal class LikedFragment : SendingFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupListeners()
+        setupAdapterData()
     }
 
     override fun onResume() {
@@ -41,10 +43,20 @@ internal class LikedFragment : SendingFragment() {
         setupBackButtonListener()
     }
 
+    private fun setupLikedListObserver() {
+        viewModel.likedList.observe(viewLifecycleOwner) {
+            binding.rvRecycler.adapter =
+        }
+    }
+
     private fun setupBackButtonListener() {
         binding.ibBack.setOnClickListener {
             val activity = requireActivity() as HostActivity
             activity.navController.navigateUp()
         }
+    }
+
+    private fun setupAdapterData() {
+        viewModel.fillAdapterWithData(getItemsImages(resources, requireActivity().theme))
     }
 }

@@ -74,7 +74,7 @@ class AuthorizationViewModel: ViewModel() {
 
     private fun checkAuthorization() {
         CoroutineScope(Dispatchers.IO).launch {
-            var result: Boolean = false
+            var result: Boolean
             runBlocking {
                 result = reloginUseCase.execute()
                 mutableIsAuthed.postValue(result)

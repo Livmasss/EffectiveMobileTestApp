@@ -2,12 +2,11 @@ package com.livmas.data.localDataBase.repositories
 
 import com.livmas.data.localDataBase.daos.LikedDao
 import com.livmas.data.localDataBase.entities.LikedEntity
-import com.livmas.data.retrofit.repositories.CatalogRepository
+import com.livmas.data.retrofit.repositories.CatalogRepositoryImpl
 import com.livmas.domain.iRepositories.LikedRepository
 import com.livmas.domain.models.LikedItemModel
-import java.util.UUID
 
-class LikedRepositoryImpl(private val dao: LikedDao, private val remoteRepository: CatalogRepository): LikedRepository {
+class LikedRepositoryImpl(private val dao: LikedDao, private val remoteRepository: CatalogRepositoryImpl): LikedRepository {
     override fun getLikedItems(): List<LikedItemModel>? {
         val liked = dao.getAll().map {
             it.remoteItemId
