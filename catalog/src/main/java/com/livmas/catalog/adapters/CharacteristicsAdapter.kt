@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.livmas.catalog.R
 import com.livmas.catalog.databinding.ItemCharacteristicLayoutBinding
-import com.livmas.data.models.CharacteristicModel
+import com.livmas.data.retrofit.models.CharacteristicModel
 
 internal class CharacteristicsAdapter(private val data: List<CharacteristicModel>):
     RecyclerView.Adapter<CharacteristicsAdapter.CharacteristicViewHolder>() {

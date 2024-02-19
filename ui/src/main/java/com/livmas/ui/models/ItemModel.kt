@@ -1,8 +1,8 @@
 package com.livmas.ui.models
 
 import android.graphics.drawable.Drawable
-import com.livmas.data.models.CharacteristicModel
-import com.livmas.data.models.ResponseCatalogItem
+import com.livmas.data.retrofit.models.CharacteristicModel
+import com.livmas.data.retrofit.models.ResponseCatalogItem
 
 data class ItemModel (
     val images: List<Drawable>,

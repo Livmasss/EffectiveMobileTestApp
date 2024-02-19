@@ -12,8 +12,8 @@ import com.livmas.catalog.adapters.CharacteristicsAdapter
 import com.livmas.catalog.databinding.FragmentItemBinding
 import com.livmas.ui.ItemKeeper.Companion.openedItemId
 import com.livmas.ui.models.ItemModel
-import com.livmas.data.models.CharacteristicModel
-import com.livmas.data.repositories.CatalogRepository
+import com.livmas.data.retrofit.models.CharacteristicModel
+import com.livmas.data.retrofit.repositories.CatalogRepository
 import com.livmas.ui.HostActivity
 import com.livmas.ui.ItemKeeper
 import com.livmas.ui.SendingFragment
@@ -43,15 +43,16 @@ class ItemFragment : SendingFragment() {
         initiateValues()
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onResume() {
+        super.onResume()
         hideActivityTitle()
     }
 
-    override fun onStop() {
-        super.onStop()
+    override fun onPause() {
         showActivityTitle()
+        super.onPause()
     }
+
 
     private fun initiateValues() =
         CoroutineScope(Dispatchers.IO).launch {

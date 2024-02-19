@@ -3,7 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.liked.LikedFragment">
+    tools:context=".fragments.liked.LikedFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:src="@drawable/ic_back"
+            style="@style/ImageButtonStyle"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            style="@style/TitleTextViewStyle"
+            android:layout_marginStart="20dp"
+            android:text="@string/title_liked"/>
+
+    </LinearLayout>
 
     <RadioGroup
         android:id="@+id/rgMode"
@@ -11,12 +35,10 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
 
         android:background="@drawable/pink_out_line"
         android:padding="5dp"
-        android:layout_margin="30dp"
+        android:layout_marginHorizontal="30dp"
         android:orientation="horizontal">
 
         <RadioButton
@@ -37,5 +59,10 @@
             android:text="@string/brands"
             style="@style/LikedModeToggleStyle"/>
     </RadioGroup>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

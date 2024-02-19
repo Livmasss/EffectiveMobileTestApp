@@ -6,9 +6,16 @@
         <item name="android:padding">5dp</item>
     </style>
 
+    <style name="TitleTextViewStyle" parent="MainTextViewStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">@font/sf_pro_display</item>
+        <item name="android:layout_marginVertical">10dp</item>
+    </style>
+
     <style name="MainTextViewStyle">
         <item name="android:textSize">20sp</item>
         <item name="fontFamily">@font/sf_pro_display</item>
+        <item name="android:textColor">@color/black</item>
     </style>
     
     <style name="LinearLayoutButtonStyle">

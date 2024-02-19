@@ -4,16 +4,47 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.livmas.profile.R
+import androidx.fragment.app.viewModels
+import com.livmas.profile.databinding.FragmentLikedBinding
+import com.livmas.ui.HostActivity
+import com.livmas.ui.SendingFragment
 
-internal class LikedFragment : Fragment() {
-    private lateinit var viewModel: LikedViewModel
+internal class LikedFragment : SendingFragment() {
+    private val viewModel: LikedViewModel by viewModels()
+    private lateinit var binding: FragmentLikedBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_liked, container, false)
+    ): View {
+        binding = FragmentLikedBinding.inflate(layoutInflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupListeners()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        hideActivityTitle()
+    }
+
+    override fun onPause() {
+        showActivityTitle()
+        super.onPause()
+    }
+
+    private fun setupListeners() {
+        setupBackButtonListener()
+    }
+
+    private fun setupBackButtonListener() {
+        binding.ibBack.setOnClickListener {
+            val activity = requireActivity() as HostActivity
+            activity.navController.navigateUp()
+        }
     }
 }

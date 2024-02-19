@@ -9,4 +9,5 @@
     <string name="return_button">Возврат товара</string>
     <string name="products">Товары</string>
     <string name="brands">Бренды</string>
+    <string name="title_liked">Избранное</string>
 </resources>
