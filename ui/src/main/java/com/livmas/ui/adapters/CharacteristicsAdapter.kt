@@ -1,12 +1,12 @@
-package com.livmas.catalog.adapters
+package com.livmas.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.livmas.catalog.R
-import com.livmas.catalog.databinding.ItemCharacteristicLayoutBinding
 import com.livmas.data.retrofit.models.CharacteristicModel
+import com.livmas.ui.R
+import com.livmas.ui.databinding.ItemCharacteristicLayoutBinding
 
 internal class CharacteristicsAdapter(private val data: List<CharacteristicModel>):
     RecyclerView.Adapter<CharacteristicsAdapter.CharacteristicViewHolder>() {

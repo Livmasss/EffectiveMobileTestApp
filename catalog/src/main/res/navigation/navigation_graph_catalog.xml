@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/catalog_navigation_item"
-        android:name="com.livmas.catalog.fragments.item.ItemFragment"
+        android:name="com.livmas.ui.fragments.item.ItemFragment"
         android:label="fragment_item"
         tools:layout="@layout/fragment_item" />
 </navigation>

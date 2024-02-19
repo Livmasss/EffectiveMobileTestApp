@@ -1,4 +1,4 @@
-package com.livmas.catalog.fragments.item
+package com.livmas.ui.fragments.item
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,17 +7,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.livmas.catalog.R
-import com.livmas.catalog.adapters.CharacteristicsAdapter
-import com.livmas.catalog.databinding.FragmentItemBinding
 import com.livmas.ui.ItemKeeper.Companion.openedItemId
 import com.livmas.ui.models.ItemModel
 import com.livmas.data.retrofit.models.CharacteristicModel
 import com.livmas.data.retrofit.repositories.CatalogRepositoryImpl
 import com.livmas.ui.HostActivity
 import com.livmas.ui.ItemKeeper
-import com.livmas.ui.SendingFragment
+import com.livmas.ui.R
+import com.livmas.ui.adapters.CharacteristicsAdapter
+import com.livmas.ui.fragments.SendingFragment
 import com.livmas.ui.adapters.PhotoPagerAdapter
+import com.livmas.ui.databinding.FragmentItemBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

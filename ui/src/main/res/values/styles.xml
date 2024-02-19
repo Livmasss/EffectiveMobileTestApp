@@ -55,4 +55,45 @@
         <item name="android:textOff">@null</item>
     </style>
 
+
+    <style name="ContentTextStyle">
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:textSize">@dimen/item_small_text_size</item>
+    </style>
+
+    <style name="HideToggleButtonStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_marginVertical">@dimen/item_vertical_margin_short</item>
+
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/item_small_text_size</item>
+
+        <item name="android:textOff">@string/show</item>
+        <item name="android:textOn">@string/hide</item>
+    </style>
+
+    <style name="RatingBarStyle" parent="android:style/Widget.Material.RatingBar.Small">
+        <item name="colorControlNormal">@color/orange</item>
+        <item name="colorControlActivated">@color/orange</item>
+    </style>
+
+    <style name="ItemFeedbackText">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:layout_marginHorizontal">5dp</item>
+    </style>
+
+    <style name="BottomBuyButtonStyle">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:clickable">true</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/discount_value_bg</item>
+    </style>
 </resources>

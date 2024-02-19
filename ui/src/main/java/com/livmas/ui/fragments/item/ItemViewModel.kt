@@ -1,4 +1,4 @@
-package com.livmas.catalog.fragments.item
+package com.livmas.ui.fragments.item
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

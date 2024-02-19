@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.livmas.profile.databinding.FragmentLikedBinding
 import com.livmas.ui.HostActivity
-import com.livmas.ui.SendingFragment
+import com.livmas.ui.fragments.SendingFragment
 import com.livmas.ui.getItemsImages
 
 internal class LikedFragment : SendingFragment() {
@@ -45,7 +45,7 @@ internal class LikedFragment : SendingFragment() {
 
     private fun setupLikedListObserver() {
         viewModel.likedList.observe(viewLifecycleOwner) {
-            binding.rvRecycler.adapter =
+//            binding.rvRecycler.adapter =
         }
     }
 

@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.livmas.effective_mobile_test_app.databinding.FragmentSalesBinding
+import com.livmas.ui.fragments.SendingFragment
 
-class SalesFragment : com.livmas.ui.SendingFragment() {
+class SalesFragment : SendingFragment() {
 
     private val viewModel: SalesViewModel by viewModels()
     private lateinit var binding: FragmentSalesBinding

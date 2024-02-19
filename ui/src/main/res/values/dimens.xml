@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="preview_item_small_text_size">9sp</dimen>
-    <dimen name="preview_item_padding">5dp</dimen>
     <dimen name="preview_rating_padding_left">3dp</dimen>
     <dimen name="preview_like_button_size">25dp</dimen>
     <dimen name="preview_item_viewpager_size">150dp</dimen>
+
+    <dimen name="item_small_text_size">12sp</dimen>
+
+    <dimen name="ProgressBarSize">50dp</dimen>
+    <dimen name="item_feedback_margin">5dp</dimen>
+    <dimen name="item_vertical_margin">5dp</dimen>
+    <dimen name="item_vertical_margin_short">2dp</dimen>
+    <dimen name="preview_item_padding">5dp</dimen>
 </resources>

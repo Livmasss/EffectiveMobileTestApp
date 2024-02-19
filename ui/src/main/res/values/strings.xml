@@ -19,4 +19,21 @@
     <string name="desc_like_button">Добавить в избранное</string>
     <string name="desc_rating_star">Оценка</string>
     <string name="desc_add_to_cart_button">Добавить в корзину</string>
+
+
+<!-- Item fragment -->
+    <string name="desc_back">Назад</string>
+    <string name="desc_share">Поделиться</string>
+    <string name="question">Вопрос</string>
+    <string name="available_pattern">Доступно для заказа %1$d штук</string>
+    <string name="review_one_count">1 отзыв</string>
+    <string name="review_few_count_pattern">%1$d отзыва</string>
+    <string name="review_lot_count_pattern">%1$d отзывов</string>
+    <string name="description">Описание</string>
+    <string name="show">Подробнее</string>
+    <string name="hide">Скрыть</string>
+    <string name="characteristics">Характеристики</string>
+    <string name="ingredients">Состав</string>
+    <string name="add_to_cart">Добавить в корзину</string>
+
 </resources>

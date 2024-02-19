@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.livmas.effective_mobile_test_app.databinding.FragmentHomeBinding
-import com.livmas.ui.SendingFragment
+import com.livmas.ui.fragments.SendingFragment
 
 class HomeFragment : SendingFragment() {
 

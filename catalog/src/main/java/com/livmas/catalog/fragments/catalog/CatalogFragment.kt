@@ -16,7 +16,7 @@ import com.livmas.catalog.R
 import com.livmas.catalog.adapters.CatalogRecyclerAdapter
 import com.livmas.catalog.databinding.FragmentCatalogBinding
 import com.livmas.catalog.models.SortingMode
-import com.livmas.ui.SendingFragment
+import com.livmas.ui.fragments.SendingFragment
 import com.livmas.ui.getItemsImages
 import com.livmas.ui.models.enums.ItemTag
 

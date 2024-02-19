@@ -9,7 +9,7 @@ import com.livmas.domain.AuthedUserHolder
 import com.livmas.domain.usecases.user.LogoutUseCase
 import com.livmas.profile.R
 import com.livmas.profile.databinding.FragmentProfileBinding
-import com.livmas.ui.SendingFragment
+import com.livmas.ui.fragments.SendingFragment
 import com.livmas.ui.databinding.LinearButtonLayoutBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

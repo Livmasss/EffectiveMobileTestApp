@@ -1,8 +1,9 @@
-package com.livmas.ui
+package com.livmas.ui.fragments
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
+import com.livmas.ui.HostActivity
 
 abstract class SendingFragment: Fragment() {
     protected var title: String? = null
