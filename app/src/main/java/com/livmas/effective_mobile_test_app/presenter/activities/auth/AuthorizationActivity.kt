@@ -100,10 +100,12 @@ class AuthorizationActivity : AppCompatActivity() {
     }
 
     private fun setupAuthorizationObserver() {
-//        viewModel.isAuthed.observe(this) {
-//            if (it)
-//                nextActivity()
-//        }
+        viewModel.isAuthed.observe(this) { b ->
+            b?.let {
+                if (b)
+                    nextActivity()
+            }
+        }
     }
 
     private fun checkAvailableAndChangeButton(error: CharSequence?) =

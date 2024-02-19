@@ -5,16 +5,23 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.livmas.data.localDataBase.entities.UserEntity
 import com.livmas.data.localDataBase.repositories.UserRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.koin.java.KoinJavaComponent.inject
 import java.util.UUID
 
 class AuthorizationViewModel: ViewModel() {
-//    private val repository: UserRepository by inject(UserRepository::class.java)
-//    val isAuthed: LiveData<Boolean>
-//        get() = mutableIsAuthed
-//    private val mutableIsAuthed: MutableLiveData<Boolean> by lazy {
-//        MutableLiveData(checkAuthorization())
-//    }
+    init {
+        checkAuthorization()
+    }
+
+    private val repository: UserRepository by inject(UserRepository::class.java)
+    val isAuthed: LiveData<Boolean?>
+        get() = mutableIsAuthed
+    private val mutableIsAuthed: MutableLiveData<Boolean?> by lazy {
+        MutableLiveData<Boolean?>()
+    }
 
     val name: LiveData<String>
         get() = _name
@@ -47,20 +54,27 @@ class AuthorizationViewModel: ViewModel() {
         _lastname.postValue(lastname)
         _phone.postValue(phone)
 
-//        authorize(
-//            UserEntity(
-//            UUID.randomUUID(),
-//            name,
-//            lastname,
-//            phone
-//            )
-//        )
+        authorize(
+            UserEntity(
+            UUID.randomUUID(),
+            name,
+            lastname,
+            phone
+            )
+        )
     }
 
-//    private fun authorize(user: UserEntity) {
-//        repository.insertAuthedUser(user)
-//    }
-//
-//    fun checkAuthorization(): Boolean =
-//        repository.getAuthedUser() != null
+    private fun authorize(user: UserEntity) {
+        CoroutineScope(Dispatchers.IO).launch {
+            repository.insertAuthedUser(user)
+        }
+    }
+
+    private fun checkAuthorization() {
+        CoroutineScope(Dispatchers.IO).launch {
+            mutableIsAuthed.postValue(
+                repository.getAuthedUser()?.copy() != null
+            )
+        }
+    }
 }
