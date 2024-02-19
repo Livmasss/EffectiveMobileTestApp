@@ -2,7 +2,6 @@ package com.livmas.catalog.fragments.catalog
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +19,6 @@ import com.livmas.catalog.adapters.CatalogRecyclerAdapter
 import com.livmas.catalog.databinding.FragmentCatalogBinding
 import com.livmas.catalog.models.SortingMode
 import com.livmas.ui.SendingFragment
-import com.livmas.utils.CATALOG_TAG
 import com.livmas.ui.models.enums.ItemTag
 
 class CatalogFragment : SendingFragment() {
@@ -104,7 +102,6 @@ class CatalogFragment : SendingFragment() {
                 )
             }
 
-            Log.i(CATALOG_TAG, "Catalog size: ${it.size}")
             binding.pbLoading.visibility = View.GONE
         }
     }
@@ -139,7 +136,6 @@ class CatalogFragment : SendingFragment() {
                 override fun onItemSelected(adapter: AdapterView<*>?, view: View?, position: Int, id: Long) {
                     SortingMode.values()[position].also {
                         viewModel.setSortMode(it)
-                        Log.i(CATALOG_TAG, "Sorting mode set: $it")
                     }
                 }
 

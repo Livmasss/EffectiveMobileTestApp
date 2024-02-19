@@ -34,6 +34,8 @@ class AuthorizationActivity : AppCompatActivity() {
     private fun setupLoginButton() {
         binding.apply {
             bLogin.setOnClickListener {
+                if (hasEmptyInput())
+                    return@setOnClickListener
                 if (!checkIsAllInputValid())
                     return@setOnClickListener
 
@@ -157,5 +159,9 @@ class AuthorizationActivity : AppCompatActivity() {
     private fun checkIsAllInputValid(): Boolean =
         with(binding) {
             TILName.error == null && TILLastname.error == null && TILPhone.error == null
+        }
+    private fun hasEmptyInput(): Boolean =
+        with(binding) {
+            TIETName.text.isNullOrEmpty() || TIETLastname.text.isNullOrEmpty() || TIETPhone.text.isNullOrEmpty()
         }
 }

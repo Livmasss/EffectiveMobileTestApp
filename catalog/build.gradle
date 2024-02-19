@@ -45,7 +45,6 @@ dependencies {
 
     // Project
     implementation project(path: ':ui')
-    implementation project(path: ':utils')
     implementation project(path: ':data')
 
     // ViewModel

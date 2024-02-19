@@ -3,8 +3,7 @@ package com.livmas.data.localDataBase.entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import org.jetbrains.annotations.NotNull
-import org.jetbrains.annotations.Nullable
+import com.livmas.domain.models.UserModel
 import java.util.UUID
 
 @Entity("users")
@@ -17,4 +16,11 @@ data class UserEntity (
     val lastname: String,
     @ColumnInfo("phone")
     val phone: String
-)
+) {
+    constructor(domainModel: UserModel): this(
+        domainModel.id,
+        domainModel.name,
+        domainModel.lastname,
+        domainModel.phone
+    )
+}

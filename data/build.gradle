@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+    // Project
+    implementation project(path: ":domain")
 
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -53,6 +55,6 @@ dependencies {
     // DI
     implementation "io.insert-koin:koin-android:3.5.0"
 
-    def roomVersion = "2.5.0"
-    ksp("androidx.room:room-compiler:$roomVersion")
+    def ksp_room_version = "2.5.0"
+    ksp("androidx.room:room-compiler:$ksp_room_version")
 }

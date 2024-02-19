@@ -16,6 +16,7 @@ rootProject.name = "EffectiveMobileTestApp"
 include ':app'
 include ':catalog'
 include ':ui'
-include ':utils'
 include ':profile'
 include ':data'
+include ':domain'
+include ':domain'

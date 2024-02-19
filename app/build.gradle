@@ -45,11 +45,11 @@ dependencies {
     def nav_version = "2.7.7"
 
     // Project
+    implementation project(path: ":domain")
+    implementation project(path: ':data')
     implementation project(path: ':ui')
-    implementation project(path: ':utils')
     implementation project(path: ':catalog')
     implementation project(path: ':profile')
-    implementation project(path: ':data')
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
