@@ -12,8 +12,8 @@ interface UserDao {
     fun insert(user: UserEntity)
 
     @Delete
-    fun deleteAll(user: UserEntity)
+    fun delete(user: UserEntity)
 
     @Query("SELECT * FROM users")
-    fun getById(user: UserEntity)
+    fun getAll(): List<UserEntity>
 }

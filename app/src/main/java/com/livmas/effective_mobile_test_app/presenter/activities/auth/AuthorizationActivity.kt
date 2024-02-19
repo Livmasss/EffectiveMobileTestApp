@@ -43,12 +43,13 @@ class AuthorizationActivity : AppCompatActivity() {
                     TIETPhone.text.toString()
                 )
 
-                startActivity(
-                    Intent(this@AuthorizationActivity, MainActivity::class.java)
-                )
+                nextActivity()
             }
         }
     }
+
+    private fun nextActivity() = startActivity(
+            Intent(this@AuthorizationActivity, MainActivity::class.java))
 
     private fun setupNameInput() {
         binding.apply {
@@ -75,6 +76,7 @@ class AuthorizationActivity : AppCompatActivity() {
     }
 
     private fun setupObservers() {
+        setupAuthorizationObserver()
         binding.apply {
             viewModel.apply {
                 name.observe(this@AuthorizationActivity) {
@@ -95,6 +97,13 @@ class AuthorizationActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun setupAuthorizationObserver() {
+//        viewModel.isAuthed.observe(this) {
+//            if (it)
+//                nextActivity()
+//        }
     }
 
     private fun checkAvailableAndChangeButton(error: CharSequence?) =
