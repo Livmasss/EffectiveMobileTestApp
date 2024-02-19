@@ -94,7 +94,7 @@ class ItemFragment : SendingFragment() {
 
                     tvPrice.text = getPriceText(price, unit)
                     tvOldPrice.text = getPriceText(oldPrice, unit)
-                    tvDiscount.text = resources.getString(com.livmas.ui.R.string.discount_pattern, discount)
+                    tvDiscount.text = resources.getString(R.string.discount_pattern, discount)
 
                     tvBrandTitle.text = title
                     tvDescription.text = description
@@ -176,5 +176,5 @@ class ItemFragment : SendingFragment() {
     }
 
     private fun getPriceText(price: Int, unit: Char) =
-        resources.getString(com.livmas.ui.R.string.price_pattern, price, unit)
+        resources.getString(R.string.price_pattern, price, unit)
 }

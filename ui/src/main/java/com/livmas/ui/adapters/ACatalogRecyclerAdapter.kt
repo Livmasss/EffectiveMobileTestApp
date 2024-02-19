@@ -7,14 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
-import com.livmas.domain.models.LikedItemModel
 import com.livmas.domain.usecases.liked.LikeItemUseCase
 import com.livmas.domain.usecases.liked.UnlikeItemUseCase
 import com.livmas.ui.ItemKeeper
-import com.livmas.ui.models.PreviewItemModel
 import com.livmas.ui.R
 import com.livmas.ui.createLikedModel
 import com.livmas.ui.databinding.ItemLayoutBinding
+import com.livmas.ui.models.PreviewItemModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

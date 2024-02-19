@@ -7,10 +7,8 @@ import androidx.lifecycle.ViewModel
 import com.livmas.data.retrofit.repositories.CatalogRepositoryImpl
 import com.livmas.domain.usecases.liked.GetLikedItemsUseCase
 import com.livmas.ui.createPreviewModel
-import com.livmas.ui.createPreviewModelList
-import com.livmas.ui.getItemsImages
-import com.livmas.ui.models.ItemModel
 import com.livmas.ui.models.PreviewItemModel
+import com.livmas.ui.updateRequiredImages
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -31,10 +29,11 @@ class LikedViewModel : ViewModel() {
     fun fillAdapterWithData(images: ArrayList<Drawable>) {
         CoroutineScope(Dispatchers.IO).launch {
             val list = getLikedItemsUseCase.execute()?.map {
-                it.createPreviewModel(listOf())
+                val previews = it.createPreviewModel(listOf())
+                previews.updateRequiredImages(images)
+                previews
             }
             mutableLikedList.postValue(list)
         }
     }
-
 }

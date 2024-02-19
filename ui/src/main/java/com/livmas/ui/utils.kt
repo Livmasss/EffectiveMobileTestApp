@@ -14,7 +14,15 @@ fun PreviewItemModel.createLikedModel(): LikedItemModel = run {
 }
 
 fun LikedItemModel.createPreviewModel(tags: List<ItemTag>): PreviewItemModel = run {
-    PreviewItemModel(id, images, price, oldPrice, unit, discount, title, subtitle, tags, rating, reviewsCount, isLiked)
+    PreviewItemModel(id, images,
+        price, oldPrice,
+        unit, discount,
+        title, subtitle, tags,
+        rating, reviewsCount, isLiked)
+}
+
+fun PreviewItemModel.updateRequiredImages(allImages: List<Drawable>) {
+    images = chooseImages(id, allImages)
 }
 
 fun getItemsImages(resources: Resources, theme: Theme) = ArrayList<Drawable>().apply {

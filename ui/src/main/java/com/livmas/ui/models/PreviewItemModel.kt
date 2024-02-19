@@ -5,7 +5,7 @@ import com.livmas.ui.models.enums.ItemTag
 
 data class PreviewItemModel (
     val id: String,
-    val images: List<Drawable>,
+    var images: List<Drawable>,
 
     val price: Int,
     val oldPrice: Int,

@@ -5,6 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
+import com.livmas.profile.adapters.LikedRecyclerAdapter
 import com.livmas.profile.databinding.FragmentLikedBinding
 import com.livmas.ui.HostActivity
 import com.livmas.ui.fragments.SendingFragment
@@ -25,6 +29,7 @@ internal class LikedFragment : SendingFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupLikedListObserver()
         setupListeners()
         setupAdapterData()
     }
@@ -45,7 +50,12 @@ internal class LikedFragment : SendingFragment() {
 
     private fun setupLikedListObserver() {
         viewModel.likedList.observe(viewLifecycleOwner) {
-//            binding.rvRecycler.adapter =
+            binding.rvRecycler.adapter = navController?.let { navController ->
+                LikedRecyclerAdapter(
+                    resources, it, navController
+                )
+            }
+            binding.rvRecycler.layoutManager = GridLayoutManager(requireContext(), 2)
         }
     }
 

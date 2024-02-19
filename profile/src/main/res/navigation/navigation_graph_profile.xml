@@ -9,7 +9,11 @@
         android:id="@+id/navigation_profile_liked"
         android:name="com.livmas.profile.fragments.liked.LikedFragment"
         android:label="fragment_liked"
-        tools:layout="@layout/fragment_liked" />
+        tools:layout="@layout/fragment_liked" >
+        <action
+            android:id="@+id/action_navigation_profile_liked_to_navigation_item"
+            app:destination="@id/navigation_item" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_profile_main"
         android:name="com.livmas.profile.fragments.profile.ProfileFragment"
@@ -19,4 +23,9 @@
             android:id="@+id/action_navigation_profile_main_to_navigation_profile_liked2"
             app:destination="@id/navigation_profile_liked" />
     </fragment>
+    <fragment
+        android:id="@+id/navigation_item"
+        android:name="com.livmas.ui.fragments.item.ItemFragment"
+        android:label="fragment_item"
+        tools:layout="@layout/fragment_item" />
 </navigation>
